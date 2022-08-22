@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Club News</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Script para traer iconos de FontAwesome -->
+    <script src="https://kit.fontawesome.com/3765723c70.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+            <div class="header__bar">   <!-- Barra de iconos -->
+                <div class="header__bar__izq">
+                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <a href="index.html"><img src="img/CryptoClub-removebg-preview.png" alt="Home" class="imgsize"></a>
+                <div class="header__bar__der">                
+                    <i class='fas fa-toggle-off'></i>
+                    <i class='fas fa-user-circle'></i>
+                </div>
+            </div>
+            <nav class="nav">  <!--  Navegador que quedará fijo -->
+                <ul>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="">Markets</a></li>
+                    <li><a href="">Cryptopedia</a></li>
+                    <li><a href="cryptoprojects.html">Crypto Projects</a></li>
+                    <li><a href="analysis.html">Analysis</a></li>
+                    <li><a href="prices.html">Prices</a></li>
+                </ul>
+            </nav>
+             <div class="ticker"> <!--Ticker horizontal que irá desplazandose horizontalmente -->
+                <ul>
+                    <li>Price1</li>
+                    <li>Price2</li>
+                    <li>Price3</li>
+                    <li>Price4</li>
+                    <li>Price5</li>
+                    <li>Price6</li>
+                </ul>
+            </div>
+    </header>
+    <main>
+        <article class="mainArt">
+            <div class="mainArt--img">
+                <img src="img/btc.jpg" alt="img-main" class="imgsize">
+            </div>
+            <article class="mainArt__news">
+                <div class="mainArt__news--btn">
+                    <button>Editor's Choice</button>
+                    <button>Latest News</button>
+                </div>
+                <article>
+                    <ul class="links">    <!-- Articulos que variarán según los botones anteriores-->
+                        <li><a href="">Crece interés de fondos institucionales por los activos digitales</a></li>
+                        <li><a href="">El proyecto de ley de stablecoins de EEUU se retrasará hasta septiembre</a></li>
+                        <li><a href="">Demandas legales contra Terra comienzan a acumularse</a></li>
+                        <li><a href="">Los “camarones” compran BTC más rápido que en el pico del bull market de 2017</a></li>
+                        <li><a href="">El TVL de DeFi se dispara en más de $10 mil millones</a></li>
+                        <li><a href="">¿Qué son las CBDC? La nueva apuesta de los bancos centrales</a></li>
+                    </ul>
+                </article>
+            </article>
+        </article>
+        <article class="articulos">
+            <div class="articulos__1"> <!-- Artículo reciente 1-->
+                <img src="img/dolar.webp" alt="latestnew1" class="imgsize">
+                <p class="parrafo">El pasado 22 de julio el llamado dólar blue se cotizó en 338 pesos (ARS), generando un 
+                    revuelo en las redes sociales. Muchos se jactaron de que confían más en bitcoin para 
+                    ahorrar, pese a su volatilidad de precio, que en la propia moneda nacional que, lejos 
+                    de valorizarse, solo se devalúa... 
+                </p>
+            </div>
+            <div class="articulos__2">   <!-- Artículo reciente 2-->
+                <img src="img/adopcion.webp" alt="latestnew2" class="imgsize">
+                <p class="parrafo">El Banco Interamericano de Desarrollo (BID), el banco BBVA y la operadora de los mercados
+                    financieros españoles, BME, completaron la primera emisión en España de un bono listado
+                    en un mercado regulado y registrado en una plataforma basada en una blockchain...
+                </p>
+            </div>
+            <article class="subscribe">   <!-- Lugar donde irá el formulario para suscribirse a las noticias -->
+                <h2>Subscribe</h2>
+                <p class="parrafo">Mantente informado de las últimas noticias del mundo cripto y la tecnología blockchain
+                    gracias a Crypto Club News donde tendrás:
+                </p>
+                <ul>
+                    <li>Resumen de las últimas noticias más contundentes</li>
+                    <li>Análisis de los mercados al día, sumado a los análisis personalizados de cada trader</li>
+                    <li>Informe de mejores criptomonedas a tener en cuenta para corto, mediano y largo plazo</li>
+                </ul>
+                <div class="check">
+                    <input type="submit" value="Subscribe">
+                    <input type="checkbox"> <!-- FUTURO CAPTCHA -->
+                </div>
+            </article>
+        </article>
+        <section>
+            <h2><a href="analysis.html" class="styleH2">Analysis</a></h2> <!-- Parte de la página análisis -->
+            <article class="analysis">
+                <article class="analysis__cont">
+                    <img src="img/eth.webp" alt="context1" class="imgsize">
+                    <p class="parrafo">Ethereum lanzó una nueva actualización de red importante llamada Grey Glacier, retrasando
+                        la “bomba de dificultad” por otros 100 días. Aquí está todo lo que hay que saber sobre 
+                        la actualización Grey Glacier de la red Ethereum...</p>
+                </article>
+                <article class="analysis__cont">
+                    <img src="img/celsius.webp" alt="context2" class="imgsize">
+                    <p class="parrafo">Celsius (CEL) fue una de las criptomonedas más afectadas en la caída del mercado de mayo
+                        y continúa desplomándose en junio tras una gran liquidación por parte de las ballenas...</p>
+                </article>
+                <article class="analysis__cont">
+                <img src="img/stocks.webp" alt="context3" class="imgsize">
+                    <p class="parrafo">Muchos entusiastas de las criptomonedas han oído hablar del indicador Pi Cycle Top, que
+                        ha predicho “mágicamente” los picos de varios mercados alcistas anteriores. Sin embargo...
+                    </p>
+                </article>
+                <article class="analysis__cont">
+                    <img src="img/axie.jpg" alt="context4" class="imgsize">
+                    <p class="parrafo">Axie Infinity experimentó una gran disminución en el volumen de ventas en junio debido a
+                        un mercado bajista general, lo que provocó una disminución del interés de los inversores
+                        en tokens no fungibles (NFT)...</p>
+                </article>
+            </article>
+        </section>
+    </main>
+    
+    <footer>
+        <section>
+            <div class="fyc">
+                <div class="firma">
+                    <img src="img/CryptoClub-removebg-preview.png" alt="Logo" class="imgsize">
+                    <p>Crypto Club</p>
+                </div>
+                <div class="contactos"> <!-- Parte de contacto -->
+                    <ul class="contactos__ul">
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">About us</a></li>
+                        <li><a href="">Our team</a></li>
+                        <li><a href="">Privacy policy</a></li>
+                        <li><a href="">Advertisement</a></li>
+                        <li><a href="">Join us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="RRSS"> <!-- RRSS -->
+                <a href="https://twitter.com/CryptoClub21" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.facebook.com/CryptoClub21" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/cryptoclub_vip/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCcHA5ASCk4kVINaR53KqW0A/featured" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://genesys.network/" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </section>
+        <hr>
+        <div class="copy"> <!-- Derechos reservados -->
+            <p>© All right reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Club News | Prices</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/3765723c70.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="header__bar">   <!-- Barra de iconos -->
+            <div class="header__bar__izq">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <a href="index.html"><img src="img/CryptoClub-removebg-preview.png" alt="Home" class="imgsize"></a>
+            <div class="header__bar__der">                
+                <i class='fas fa-toggle-off'></i>
+                <i class='fas fa-user-circle'></i>
+            </div>
+        </div>
+        <nav class="nav">   <!-- Navegador que quedará fijo -->
+            <ul>
+                <li><a href="news.html">News</a></li>
+                <li><a href="">Markets</a></li>
+                <li><a href="">Cryptopedia</a></li>
+                <li><a href="cryptoprojects.html">Crypto Projects</a></li>
+                <li><a href="analysis.html">Analysis</a></li>
+                <li><a href="prices.html">Prices</a></li>
+            </ul>
+        </nav>
+        <div class="ticker"> <!-- Ticker horizontal que irá desplazandose horizontalmente -->
+            <ul>
+                <li>Price1</li>
+                <li>Price2</li>
+                <li>Price3</li>
+                <li>Price4</li>
+                <li>Price5</li>
+                <li>Price6</li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h1 class="title">Price of cryptocurrencies in real time</h1>
+            <hr class="hr--width">
+            <article> <!-- Calculadora para convertir moneda local a token-->
+                <h2 class="title__h2">Calculator</h2>
+                <div class="calculadora">
+                    <div class="calculadora__token">
+                        <div class="calculadora__token--height"> <!-- Conversor moneda local a token-->
+                            <h3>Local currency</h3>
+                            <div class="btnCalculator">
+                                <button><i class='fab fa-btc'></i> Crypto/Token</button>
+                                <button>Currency</button>
+                            </div>
+                            <div class="btnCalculator">
+                                <button><i class='fab fa-btc'></i> Amount</button>
+                                <button>Result</button>
+                            </div>
+                        </div>
+                        <div class="calculadora__token--height"> <!-- Conversor de token a otro token-->
+                            <h3>Cryptocurrency</h3>
+                            <div class="btnCalculator">
+                                <button><i class='fab fa-btc'></i> Crypto/Token</button>
+                                <button><i class='fab fa-btc'></i> Crypto/Token</button>
+                            </div>
+                            <div class="btnCalculator">
+                                <button><i class='fab fa-btc'></i> Amount</button>
+                                <button><i class='fab fa-btc'></i> Amount</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calculadora__chart">
+                        <img src="img/Trade.png" class="imgsize">
+                    </div>
+                </div>
+            </article>
+            <article> <!-- Apartado donde estarán los precios de btc y eth en distintos paises-->
+                <h2 class="title__h2">Prices of bitcoin and ethereum in local currency</h2>
+                <div class="prices">
+                    <div class="pricesBlock">
+                        <div class="pricesBlock__Up">
+                            <img src="img/arg.png" class="imgsize--block"> <!-- Imagen del país -->
+                            <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
+                                <p>ARGENTINA</p> <!-- Nombre del país -->
+                                <p>285,82 ARS</p> <!-- Precio moneda local -->
+                            </div>
+                        </div>
+                        <div class="pricesBlock__Up__btn">
+                            <i class='fab fa-btc'><button>6.637.761,83 ARS</button></i>
+                            <i class='fab fa-ethereum'><button>443.970,73 ARS</button></i>
+                        </div>
+                    </div>
+                    <div class="pricesBlock">
+                        <div class="pricesBlock__Up">
+                            <img src="img/bolivia.webp" class="imgsize--block"> <!-- Imagen del país -->
+                            <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
+                                <p>BOLIVIA</p> <!-- Nombre del país -->
+                                <p>6,68 BOB</p> <!-- Precio moneda local -->
+                            </div>
+                        </div>
+                        <div class="pricesBlock__Up__btn">
+                            <i class='fab fa-btc'><button>155.246,72 BOB</button></i>
+                            <i class='fab fa-ethereum'><button>10.972,84 BOB</button></i>
+                        </div>
+                    </div>
+                    <div class="pricesBlock">
+                        <div class="pricesBlock__Up">
+                            <img src="img/brasil.png" class="imgsize--block"> <!-- Imagen del país -->
+                            <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
+                                <p>BRASIL</p> <!-- Nombre del país -->
+                                <p>5,30 BRL</p> <!-- Precio moneda local -->
+                            </div>
+                        </div>
+                        <div class="pricesBlock__Up__btn">
+                            <i class='fab fa-btc'><button>123.140,75 BRL</button></i>
+                            <i class='fab fa-ethereum'><button>8.721,22 BRL</button></i>
+                        </div>
+                    </div>
+                    <div class="pricesBlock">
+                        <div class="pricesBlock__Up">
+                            <img src="img/chile.png" class="imgsize--block"> <!-- Imagen del país -->
+                            <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
+                                <p>CHILE</p> <!-- Nombre del país -->
+                                <p>922,84 CLP</p> <!-- Precio moneda local -->
+                            </div>
+                        </div>
+                        <div class="pricesBlock__Up__btn">
+                            <i class='fab fa-btc'><button>21.431.910,91 CLP</button></i>
+                            <i class='fab fa-ethereum'><button>1.510.367,40 CLP</button></i>
+                        </div>
+                    </div>
+                    <div class="pricesBlock">
+                        <div class="pricesBlock__Up">
+                            <img src="img/mex.png" class="imgsize--block"> <!-- Imagen del país -->
+                            <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
+                                <p>MEXICO</p> <!-- Nombre del país -->
+                                <p>20,70 MXN</p> <!-- Precio moneda local -->
+                            </div>
+                        </div>
+                        <div class="pricesBlock__Up__btn">
+                            <i class='fab fa-btc'><button>480.680,99 MXN</button></i>
+                            <i class='fab fa-ethereum'><button>33.940,00 MXN</button></i>
+                        </div>
+                    </div>
+                    <div class="pricesBlock">
+                        <div class="pricesBlock__Up">
+                            <img src="img/panama.png" class="imgsize--block">    <!-- Imagen del país -->
+                            <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
+                                <p>PANAMA</p> <!-- Nombre del país -->
+                                <p>1,02 PAB</p> <!-- Precio moneda local -->
+                            </div>
+                        </div>
+                        <div class="pricesBlock__Up__btn">
+                            <i class='fab fa-btc'><button>23.689,16 PAB</button></i>
+                            <i class='fab fa-ethereum'><button>1.674,35 PAB</button></i>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <section>
+            <div class="fyc">
+                <div class="firma">
+                    <img src="img/CryptoClub-removebg-preview.png" alt="Logo" class="imgsize">
+                    <p>Crypto Club</p>
+                </div>
+                <div class="contactos"> <!-- Parte de contacto -->
+                    <ul class="contactos__ul">
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">About us</a></li>
+                        <li><a href="">Our team</a></li>
+                        <li><a href="">Privacy policy</a></li>
+                        <li><a href="">Advertisement</a></li>
+                        <li><a href="">Join us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="RRSS"> <!-- RRSS -->
+                <a href="https://twitter.com/CryptoClub21" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.facebook.com/CryptoClub21" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/cryptoclub_vip/" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCcHA5ASCk4kVINaR53KqW0A/featured" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://genesys.network/" target="_blank"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+        </section>
+        <hr>
+        <div class="copy"> <!-- Derechos reservados -->
+            <p>© All right reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

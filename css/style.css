@@ -1,0 +1,720 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Propiedades no exceden su caja */
+}
+
+body {  /* Ajusto pagina a forma establecida */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "header header header header header"
+    "...... main   main   main   ......"
+    "footer footer footer footer footer"
+    ;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+    background: #dad9e0;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #687576;
+}
+
+.header__bar {  /* Posicionar barra de iconos */
+    display: flex;
+    height: 55px;
+    background: #BED1DC;
+    justify-content: space-between;
+}
+ 
+.header__bar__izq i, .header__bar__der i  {   /* Estilo a iconos del lado izquierdo y derecho */
+    font-size: 30px;
+    padding: 10px;
+}
+
+.imgsize {   /* Adapto tamaño de las imagenes a su contenedor */
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.parrafo {  /* Estilo a cada texto de cada imagen */
+    text-align: justify;
+    padding: 8px;
+}
+
+.nav ul {    /* Posiciono nav */
+    height: 45px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #B7CCD9;
+    list-style-type: none;
+}
+
+.nav ul li a { 
+    color: #333333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.ticker ul {    /* Dimension al ticker (falta animation) */
+    height: 40px;
+    background: #8b8d8d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.ticker ul li { /* Estilo */
+    padding: 0 20px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.mainArt { /* Articulo cabecera */
+    background: #CDEAE5;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+}
+
+.mainArt--img {
+    width: 50%;
+    margin: auto;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.mainArt__news { /* Seccion de noticias a elegir por el usuario */
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.mainArt__news--btn { /* Posiciono botones */
+    display: flex;
+    justify-content: center;
+    height: 75px;
+}
+
+.mainArt__news--btn button { /* Estilo a los botones */
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.links { /* Articulos a noticias */
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+.links li {
+    padding: 10px;
+    font-size: 19px;
+}
+
+.links li a {
+    text-decoration: none;
+}
+
+.articulos { /* Seccion de articulos recientes */
+    margin: 0 auto;
+    height: 425px;
+    display: flex;
+    flex-flow: column wrap;
+    background: #dadada;
+}
+
+.articulos__1, .articulos__2 { /* Dimensiono articulos */
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.subscribe { /* Contenedor padre de la suscripcion */
+    background: #77b7df;
+    width: 30%;
+    height: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscribe h2 {
+    font-size: 30px;
+    font-weight: 900;
+    margin: 10px;
+    text-shadow:  2px -2px 2px #2b5e7e;
+}
+
+.subscribe ul {
+    padding-left: 20px;
+    list-style-type: square;
+}
+
+.subscribe ul li, .firma p {
+    margin: 10px;
+    font-weight: 700;
+}
+
+.subscribe input {
+    width: 80%;
+    margin: 20px;
+    background: #86c8f1;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.mainIndex section { /* Sección Analysis */
+    margin: 0 auto;
+    width: 1250px;
+    display: flex;
+    flex-flow: column wrap;
+    background: #E5E4EA;
+}
+
+.styleH2 {
+    padding: 5px;
+    font-size: 32px;
+    text-decoration: none;
+    color: #555555;
+}
+
+.analysis { /* Dimensiono donde estaran los articulos de Analysis */
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.analysis__cont {   /* Ajusto al 25% del main para que entren las 4 noticias */
+    width: 25%;
+    display: flex;
+    flex-flow: column wrap;
+    overflow: hidden;
+}
+
+.fyc { /* firma y contacto */
+    height: 55px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.firma{
+    display: flex;
+    align-items: center;
+}
+
+.contactos, .contactos__ul {
+    display: flex;
+    align-items: center;
+}
+
+.contactos__ul li {
+    list-style-type: none;
+}
+
+.contactos li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 800;
+    font-size: 20px;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 0 0 4px 2px  #424242;
+}
+
+.RRSS {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.RRSS a i {
+    font-size: 30px;
+    padding: 4px 6px;
+    color: #1b199b;
+}
+
+hr {    /* parte footer */
+    width: 95%;
+    height: 3px;
+    margin: 5px auto;
+    background: #000000;
+}
+
+.hr--width {    /* parte titles */
+    width: 99%;
+}
+
+.copy {
+    text-align: center;
+    font-weight: 900;
+}
+
+/* Estilo a "News" */
+
+
+.title { /* Estilo a h1 */
+    text-align: center;
+    padding: 10px 0;
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+.news__arts { /* Seccion de articulos */
+    padding: 0 5px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.news__arts article { /* Cada articulo */
+    width: 25%;
+    padding: 10px;
+    box-shadow: 0 0 8px 6px #faf9f9;
+}
+
+.btn { /* Caja "Load More" */
+    padding: 10px 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.btn hr {
+    width: 40%;
+}
+
+.btn button {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px;
+}
+
+.events__arts { /* eventos de la semana */
+    padding: 0 5px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.events__arts article { /* Cada articulo */
+    width: 33%;
+    margin: 5px auto;
+    padding: 10px;
+    box-shadow: 0 0 5px 5px #faf9f9;
+}
+
+/* Estilo a "Crypto Projects" */
+
+.title__h2 {
+    font-size: 28px;
+    padding-left: 10px;
+}
+
+.noticias { /* caja de tipo de blockchain */
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.noticias article { /* dimension de caja hijo */
+    width: 24%;
+    margin: 10px auto;
+    background-color: #e0e1e3;
+    box-shadow: 0 0 4px 1px #9f9e9e;
+}
+
+/* Estilo a "Analysis" */
+
+.profile {
+    display: flex;
+}
+
+.profile a {
+    color: #1b199b;
+}
+
+.analisis {
+    display: flex;
+}
+
+.analisis article {
+    width: 25%;
+    margin: 20px 10px;
+    background-color: #edf1f5;
+    box-shadow: 0 0 8px 2px #c7bcbc;
+}
+
+/* Estilo a "Prices */
+
+.calculadora {
+    display: flex;
+    margin: 10px;
+}
+
+.calculadora__token {
+    width: 45%;
+    padding-right: 5px;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.calculadora__token--height {
+    border: 1px solid #000000;
+    height: 175px;
+}
+
+.calculadora__token--height h3 {
+    padding: 5px 15px;
+}
+
+.calculadora__chart {
+    width: 55%;
+    margin: auto;
+    padding-left: 5px;
+}
+
+.btnCalculator {
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btnCalculator button {
+    height: 40px;
+    width: 150px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #f5f7fa;
+    border-color: #6e6e6e;
+}
+
+.prices {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.pricesBlock {
+    width: 40%;
+    margin: 10px;
+    padding: 10px 0;
+    border: 2px solid #858282 ;
+    border-radius: 4px;
+    background-color: #e5eceb;
+    box-shadow: 0.2px -0.2px 5px 0.2px #a7a4a4 ;
+}
+
+.pricesBlock__Up {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #7a7a7a;
+}
+
+.pricesBlock__Up i {
+    font-size: 25px;
+    padding: 0 5px;
+}
+
+.pricesBlock__Up__Titles p {
+    padding: 0 10px;
+    font-size: 20px;
+}
+
+.pricesBlock__Up__btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pricesBlock__Up__btn button {
+    margin: 10px;
+    height: 50px;
+    width: 250px;
+}
+
+.imgsize--block {
+    width: 35px;
+    height: 25px;
+}
+
+/* APLICANDO MEDIA QUERIES */
+
+@media screen and (max-width: 768px){   /* MODELO TABLET */
+
+    body {
+        display: grid;
+        grid-template-columns: 1fr repeat(3, 1.5fr) 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "header header header header header"
+            "...... main main main ......"
+            "footer footer footer footer footer";
+    }
+
+    /* HOME */
+    .mainArt {
+        flex-direction: column;
+        align-content: space-around;
+    }
+
+    .mainArt__news, .calculadora__token {
+        width: 100%;
+    }
+
+    .mainArt__news--btn{
+        height: 100%;
+    }
+
+    .articulos{
+        height: auto;
+        flex-direction: row;
+    }
+
+    .articulos__1{
+        width: 50%;
+    }
+
+    .articulos__2 {
+        display: none;
+    }
+
+    .subscribe{
+        width: 50%;
+        height: auto;
+    }
+
+    .subscribe > ul {
+        display: none;
+    }
+
+    .analysis{
+        height: auto;
+        flex-flow: row wrap;
+    }
+
+    .analysis__cont {
+        width: 50%;
+    }
+
+    .contactos__ul li a {
+        font-size: 16px;
+    }
+
+    /* NEWS */
+    
+    .events__arts{
+        overflow: hidden;
+    }
+
+    .news__arts > article, .events__arts > article {
+        width: 50%;
+    }
+
+    .events__arts > article:nth-child(3) { /* El tercer articulo que no se muestre */
+        display: none;
+    }
+
+    /* CRYPTO PROJECTS */
+    .noticias > article {
+        width: 49%;
+    }
+
+    /* ANALYSIS */
+    .analisis {
+        flex-flow: row wrap;
+    }
+
+    .analisis > article {
+        width: 49%;
+        margin: 10px auto;
+    }
+
+    /* PRICES */
+
+    .calculadora {
+        flex-flow: column wrap;
+    }
+
+    .calculadora__chart{
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    .pricesBlock {
+        width: 45%;
+    }
+
+    .pricesBlock__Up__btn button {
+        width: 160px;
+    }
+}
+
+@media screen and (max-width: 480px) {  /* MODELO MOBILE */
+
+    body {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "header header header header header"
+            "main   main   main   main  main"
+            "footer footer footer footer footer";
+    }
+
+    /* HOME */
+    .nav > ul{
+        height: 60px;
+        flex-flow: row wrap;
+    }
+
+    .mainArt--img{
+        display: none;
+    }
+
+    .mainArt__news--btn button {
+        width: 50%;
+    }
+
+    .links li {
+        font-size: 16px;
+    }
+
+    .articulos{
+        flex-direction: column;
+    }
+
+    .articulos__1, .articulos__2, .subscribe ul {
+        width: 100%;
+        display: block;
+    }
+
+    .subscribe, .events__arts > article, .noticias > article{
+        width: 100%;
+    }
+
+    .check {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .check > input {
+        width: auto;
+        padding: 10px 20px;
+    }
+
+    .analysis {
+        flex-flow: column wrap;
+    }
+
+    .analysis__cont{
+        width: 100%;
+    }
+
+    .fyc{
+        height: 80px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .firma {
+        height: 55px;
+    }
+
+    .contactos {
+        width: 90%;
+        height: 100%;
+    }
+
+    .contactos__ul {
+        height: 100%;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* NEWS */
+    .news__arts > article {
+        width: 100%;
+    }
+
+    .btn hr{
+        width: 35%;
+    }
+
+    .events__arts > article:nth-child(3) {
+        display: block;
+    }
+
+    /* CRYPTO PROJECTS */
+    .noticias {
+        flex-direction: column;
+    }
+
+    /* ANALYSIS */
+    .analisis{
+        flex-flow: column wrap;
+    }
+
+    .analisis > article {
+        width: 100%;
+    }
+
+    /* PRICES */
+    
+    .calculadora__token, .calculadora__token--height{
+        height: auto;
+    }
+
+    .btnCalculator {
+        flex-flow: column wrap;
+        align-items: center;
+    }
+    .btnCalculator button {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .prices {
+        flex-flow: column wrap;
+        align-content: center;
+    }
+
+    .pricesBlock {
+        width: 90%;
+    }
+
+    .pricesBlock__Up__btn button {
+        width: 260px;
+    }
+}
