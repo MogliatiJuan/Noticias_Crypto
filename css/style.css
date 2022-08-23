@@ -35,7 +35,7 @@ footer {
 .header__bar {  /* Posicionar barra de iconos */
     display: flex;
     height: 55px;
-    background: #BED1DC;
+    background: #B7CCD9;
     justify-content: space-between;
 }
  
@@ -59,7 +59,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: #B7CCD9;
+    background: #BED1DC;
     list-style-type: none;
 }
 
@@ -71,20 +71,71 @@ footer {
     padding: 10px;
 }
 
-.ticker ul {    /* Dimension al ticker (falta animation) */
-    height: 40px;
-    background: #8b8d8d;
+
+.ticker {    /* Animacion del scrolling infinito */
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    list-style-type: none;
+    height: 40px;
+    width: 100vw;
     overflow: hidden;
+    background-color: #BED6DD;
+}
+  
+.scroll-parent {
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    overflow-x: hidden;
+}
+  
+.scroll-element {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+  
+.scroll-element--cont {
+    width: 15%;
+    padding: 3px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
-.ticker ul li { /* Estilo */
-    padding: 0 20px;
-    font-size: 15px;
-    font-weight: 600;
+.scroll-element--cont > p {
+    font-weight: 700;
+}
+
+.primary {
+    animation: primary 12s linear infinite;
+}
+  
+.secondary {
+    animation: secondary 12s linear infinite;
+}
+  
+@keyframes primary {
+    from {
+      left: 0%;
+    }
+    to {
+      left: -100%;
+    }
+}
+  
+@keyframes secondary {
+    from {
+      left: 100%;
+    }
+    to {
+      left: 0%;
+    }
 }
 
 .mainArt { /* Articulo cabecera */
@@ -479,6 +530,10 @@ hr {    /* parte footer */
     }
 
     /* HOME */
+    .ticker {
+        display: none;
+    }
+
     .mainArt {
         flex-direction: column;
         align-content: space-around;
@@ -589,6 +644,10 @@ hr {    /* parte footer */
     }
 
     /* HOME */
+    .ticker {
+        display: none;
+    }
+
     .nav > ul{
         height: 60px;
         flex-flow: row wrap;
