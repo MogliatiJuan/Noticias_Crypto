@@ -5,88 +5,112 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Club News | Analysis</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- Script para traer iconos de FontAwesome -->
     <script src="https://kit.fontawesome.com/3765723c70.js" crossorigin="anonymous"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
     <header>
-        <div class="header__bar">   <!-- Barra de iconos -->
-            <div class="header__bar__izq">
-                <i class="fa-solid fa-bars"></i>
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-            <a href="index.html"><img src="img/CryptoClub-removebg-preview.png" alt="Home" class="imgsize"></a>
-            <div class="header__bar__der">                
-                <i class='fas fa-toggle-off'></i>
-                <i class='fas fa-user-circle'></i>
-            </div>
-        </div>
-        <nav class="nav">   <!-- Navegador que quedará fijo -->
-            <ul>
-                <li><a href="news.html">News</a></li>
-                <li><a href="cryptoprojects.html">Crypto Projects</a></li>
-                <li><a href="analysis.html">Analysis</a></li>
-                <li><a href="prices.html">Prices</a></li>
-            </ul>
-        </nav>
-        <div class="ticker">
-            <div class="scroll-parent">
-              <div class="scroll-element primary">
-                <div class="scroll-element--cont">
-                    <img src="img/arg.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>6.637.761,83 ARS</p>
+        <nav class="navbar navbar-expand-lg navFondo"> <!-- Navegador entre paginas y demas -->
+            <div class="container-fluid"> <!-- Adapto 100% responsive -->
+              <a class="navbar-brand" href="#">Menú</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button> <!-- Boton que abre menu hamburguesa -->
+              <div class="collapse navbar-collapse distribucion" id="navbarSupportedContent"> <!-- Contenido en partes -->
+                <div class="menunav"> <!-- Secciones del sitio -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 margen0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./news.html">NEWS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./cryptoprojects.html">CRYPTO PROJECTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./analysis.html">ANALYSIS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./prices.html">PRICES</a>
+                    </ul>
+                    <form class="d-flex" role="search"> <!-- Buscador -->
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                      </form>
                 </div>
-                <div class="scroll-element--cont">
-                    <img src="img/bolivia.webp" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>155.246,72 BOB</p>
+                <div> <!-- Home -->
+                    <a href="index.html"><img src="./img/CryptoClub-removebg-preview.png" alt="Home" class="imgHome"></a>
                 </div>
-                <div class="scroll-element--cont">
-                    <img src="img/brasil.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>123.140,75 BRL</p>
-                </div>
-                <div class="scroll-element--cont">
-                    <img src="img/chile.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>21.431.910,91 CLP</p>
-                </div>
-                <div class="scroll-element--cont">
-                    <img src="img/mex.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>480.680,99 MXN</p>
-                </div>
-              </div>
-              <div class="scroll-element secondary">
-                <div class="scroll-element--cont">
-                    <img src="img/panama.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>23.689,16 PAB</p>
-                </div>
-                <div class="scroll-element--cont">
-                    <img src="img/arg.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>6.637.761,83 ARS</p>
-                </div>
-                <div class="scroll-element--cont">
-                    <img src="img/bolivia.webp" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>155.246,72 BOB</p>
-                </div>
-                <div class="scroll-element--cont">
-                    <img src="img/brasil.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>123.140,75 BRL</p>
-                </div>
-                <div class="scroll-element--cont">
-                    <img src="img/chile.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>21.431.910,91 CLP</p>
-                </div>
+                <form class="d-flex header__bar__der"  role="personal"> <!-- Proximamente dark mode y usuario -->
+                    <i class='fas fa-toggle-off'></i>
+                    <i class='fas fa-user-circle'></i>
+                </form>
               </div>
             </div>
-        </div> 
+          </nav>
+            <div class="ticker">  <!-- Ticker que muestra precios horizontalmente de manera indefinida -->
+                <div class="scroll-parent">
+                  <div class="scroll-element primary">
+                    <div class="scroll-element--cont">
+                        <img src="./img/arg.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>6.637.761,83 ARS</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/bolivia.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>155.246,72 BOB</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/brasil.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>123.140,75 BRL</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/chile.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>21.431.910,91 CLP</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/mex.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>480.680,99 MXN</p>
+                    </div>
+                  </div>
+                  <div class="scroll-element secondary">
+                    <div class="scroll-element--cont">
+                        <img src="./img/panama.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>23.689,16 PAB</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/arg.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>6.637.761,83 ARS</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/bolivia.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>155.246,72 BOB</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/brasil.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>123.140,75 BRL</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/chile.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>21.431.910,91 CLP</p>
+                    </div>
+                  </div>
+                </div>
+            </div> 
     </header>
 
     <main>
@@ -94,181 +118,517 @@
             <h1 class="title">Analysis by our team</h1>
             <hr class="hr--width">
             <article> <!-- Análisis por parte de cada editor, segmentado cada uno en su espacio -->
-                <article>
-                    <div class="profile">
+                <article> <!-- Analsis 1-->
+                    <div class="profile">    <!-- Creador de contenido -->
                         <h2 class="title__h2">Juan Mogliati</h2>
                         <a href="https://twitter.com/Papu_Crypto" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                     </div>
-                    <div class="analisis">
-                        <article>
-                            <img src="img/web3.webp" alt="analysis_jm_1" class="imgsize">
-                            <p class="parrafo"><b>¿QUÉ ES LA WEB 3.0?</b> 
-                                En definitiva, la Web 3.0 es la web de tercera generación. No requiere permisos, 
-                                está descentralizado y tiene diseños de código extraídos de fuentes abiertas. En términos más
-                                simples, la Web 3.0 procesa información con inteligencia similar a la humana mediante la
-                                asistencia de inteligencia artificial (IA) y aprendizaje automático, sin depender de 
-                                plataformas centralizadas para el intercambio de datos. Los usuarios de Web3...
-                            </p>
-                        </article>
-                        <article>
-                            <img src="img/coinbase.webp" alt="analysis_jm_2" class="imgsize">
-                            <p class="parrafo"><b>¿QUÉ PASÓ EN COINBASE?</b> 
-                                El exgerente de productos de Coinbase, Ishan Wahi, y otros 2 han sido 
-                                arrestados por presuntos roles en un esquema de insider trading (uso de información privilegiada).
-                                Los cargos alegan que las personas planearon usar información confidencial de Coinbase sobre qué 
-                                criptoactivos estaban programados para ser incluidos en los intercambios de Coinbase para obtener 
-                                ganancias personales y fueron acusados ​​​​de conspiración de fraude electrónico...
-                            </p>
-                        </article>
-                        <article>
-                            <img src="img/ledger.jpg" alt="analysis_jm_3" class="imgsize">
-                            <p class="parrafo"><b>¿CUÁL ES EL MEJOR LUGAR PARA GUARDAR CRIPTOMONEDAS?</b>
-                                Bueno, la respuesta no es tán sencilla por que el lugar en el cual guardes tus criptomonedas dependerá
-                                de dos cuestiones; el monto de criptomonedas que poseas y el plan de inversión que quieras ejecutar.                                    
-                                El primer supuesto lo explicaremos de la siguiente manera:
-                                Si Satoshi decide comprar $10 dólares de Ether en un exchange centralizado, obtendrá en promedio un total
-                                de $9.8 dólares (dependerá mucho de las comisiones que cobre el exchange)...
-                            </p>
-                        </article>
-                        <article>
-                            <img src="img/cex.webp" alt="analysis_jm_4" class="imgsize">
-                            <p class="parrafo"><b>¿TE HAS PREGUNTADO POR QUE OFRECEN ALTOS RENDIMIENTOS? LA SEGURIDAD DE TUS CRIPTOMONEDAS PUEDE ESTAR 
-                                COMPROMETIDA.</b>
-                                El ecosistema cripto ha tenido un crecimiento exponencial en los últimos años, derivado de un conjunto de 
-                                estrategias de marketing diseñadas por parte de los exchanges, los fundadores de los proyectos, así como 
-                                del spam propiciado por los mismos usuarios para atraer a más inversionistas y pumpear (aumentar) el precio 
-                                de una cripto.
-                            </p>
-                        </article>
-                    </div>
+                    <article> <!-- Sección de análisis hechos por el creador -->
+                        <div id="carouselExampleControls1" class="carousel carousel-dark slide" data-bs-touch="false"> <!-- Carousel con indicadores sin movimiento automatico -->
+                            <div class="carousel-inner"> <!-- Contenedor de los articulos -->
+                              <div class="carousel-item active"> <!-- Primer caja que muestra los 4 articulos -->
+                                <div class="cards-wrapper"> <!-- Articulos envueltos -->
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/web3.png" alt="...">
+                                        </div>
+                                        <div class="card-body"> <!-- Cuerpo del articulo -->
+                                            <h5 class="card-title">¿QUÉ ES LA WEB 3.0?</h5>
+                                            <p class="card-text parrafoCPA">En definitiva, la Web 3.0 es la web de tercera generación. No requiere permisos, 
+                                                está descentralizado y tiene diseños de código extraídos de fuentes abiertas. En términos más
+                                                simples, la Web 3.0 procesa...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div> <!-- Siguientes es idem a este div -->
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/coinbase.png" alt="...">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">¿QUÉ PASÓ EN COINBASE?</h5>
+                                            <p class="card-text parrafoCPA">El exgerente de productos de Coinbase, Ishan Wahi, y otros 2 han sido 
+                                                arrestados por presuntos roles en un esquema de insider trading (uso de información privilegiada).
+                                                Los cargos alegan que las personas...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/ledger.png" alt="...">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">¿CÓMO GUARDAR CRIPTOMONEDAS?</h5>
+                                            <p class="card-text parrafoCPA">Bueno, la respuesta no es tán sencilla por que el lugar en el cual guardes tus criptomonedas dependerá
+                                                de dos cuestiones; el monto de criptomonedas que poseas y el plan de inversión...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/cex.png" alt="...">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">¿POR QUE TAN ALTOS RENDIMIENTOS?</h5>
+                                            <p class="card-text parrafoCPA">El ecosistema cripto ha tenido un crecimiento exponencial en los últimos años, derivado de un conjunto de 
+                                                estrategias de marketing diseñadas por parte de los exchanges, los fundadores de los...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item active"> <!-- Segunda caja que muestra los 4 articulos -->
+                                <div class="cards-wrapper"> <!-- Articulos envueltos -->
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/web3.png" alt="...">
+                                        </div>
+                                        <div class="card-body"> <!-- Cuerpo del articulo -->
+                                            <h5 class="card-title">¿QUÉ ES LA WEB 3.0?</h5>
+                                            <p class="card-text parrafoCPA">En definitiva, la Web 3.0 es la web de tercera generación. No requiere permisos, 
+                                                está descentralizado y tiene diseños de código extraídos de fuentes abiertas. En términos más
+                                                simples, la Web 3.0 procesa...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div> <!-- Siguientes es idem a este div -->
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/coinbase.png" alt="...">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">¿QUÉ PASÓ EN COINBASE?</h5>
+                                            <p class="card-text parrafoCPA">El exgerente de productos de Coinbase, Ishan Wahi, y otros 2 han sido 
+                                                arrestados por presuntos roles en un esquema de insider trading (uso de información privilegiada).
+                                                Los cargos alegan que las personas...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/ledger.png" alt="...">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">¿CÓMO GUARDAR CRIPTOMONEDAS?</h5>
+                                            <p class="card-text parrafoCPA">Bueno, la respuesta no es tán sencilla por que el lugar en el cual guardes tus criptomonedas dependerá
+                                                de dos cuestiones; el monto de criptomonedas que poseas y el plan de inversión...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/cex.png" alt="...">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">¿POR QUE TAN ALTOS RENDIMIENTOS?</h5>
+                                            <p class="card-text parrafoCPA">El ecosistema cripto ha tenido un crecimiento exponencial en los últimos años, derivado de un conjunto de 
+                                                estrategias de marketing diseñadas por parte de los exchanges, los fundadores de los...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                    </article>
                 </article>
-                <article>
-                    <div class="profile">
+                <article> <!-- Analsis 2-->
+                    <div class="profile">   <!-- Creador de contenido -->
                         <h2 class="title__h2">Edwin Lobo</h2>
                         <a href="https://twitter.com/Papu_Crypto" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                     </div>
-                    <div class="analisis">
-                        <article>
-                            <img src="img/average.png" alt="analysis_el_1" class="imgsize">
-                            <p class="parrafo"><b>¡¿Cuándo es el mejor momento de comprar criptos?!</b> 
-                                Los cripto-activos pueden ser una gran estrategia para cualquier inversionista ya sea grande
-                                o pequeño. En el newsletter de esta semana te vamos a dar unos tips sobre la estrategia del
-                                "costo promedio", cómo funciona y cómo puedes utilizarlo para comprar diferentes criptomonedas. 
-                            </p>
-                        </article>
-                        <article>
-                            <img src="img/avalabs.webp" alt="analysis_el_2" class="imgsize">
-                            <p class="parrafo"><b>¿QUÉ ESTÁ PASANDO CON AVALANCHE?</b>
-                                Ava Labs lanza puente que permite a los usuarios transferir fondos directamente entre la red 
-                                Bitcoin y Avalanche , una cadena de bloques de nivel 1 de alto rendimiento que ofrece 
-                                compatibilidad con la VEM. El puente tokenizará el principal activo criptográfico como un token
-                                basado en Avalanche llamado BTC.b...
-                            </p>
-                        </article>
-                        <article>
-                            <img src="img/solana.jpg" alt="analysis_el_3" class="imgsize">
-                            <p class="parrafo"><b>¿EXPLOIT EN SOLANA?</b>
-                                Wallets en Solana apuntadas en el último hackeo multimillonario. El exploit parece estar afectando
-                                a los usuarios de billeteras "calientes" conectadas a Internet. El ecosistema de Solana parece ser 
-                                víctima del último exploit...
-                            </p>
-                        </article>
-                        <article>
-                            <img src="img/saylor.jpg" alt="analysis_el_4" class="imgsize">
-                            <p class="parrafo"><b>SAYLOR RENUNCIA A SU CARGO.</b>
-                                El CEO maximalista de Bitcoin de MicroStrategy, Saylor, entrega el puesto a un diputado y asume el 
-                                cargo de presidente ejecutivo. Michael Saylor, uno de los patrocinadores de bitcoin más destacados 
-                                en las empresas...
-                            </p>
-                        </article>
-                    </div>
+                    <article> <!-- Sección de análisis hechos por el creador -->
+                        <div id="carouselExampleControls2" class="carousel carousel-dark slide" data-bs-touch="false"> <!-- Carousel con indicadores sin movimiento automatico -->
+                            <div class="carousel-inner"> <!-- Contenedor de los articulos -->
+                              <div class="carousel-item active"> <!-- Primer caja que muestra los 4 articulos -->
+                                <div class="cards-wrapper"> <!-- Articulos envueltos -->
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/average.png" alt="analysis_el_1">
+                                        </div>
+                                        <div class="card-body"> <!-- Cuerpo del articulo -->
+                                            <h5 class="card-title">¡¿Cuándo es el mejor momento de comprar criptos?!</h5>
+                                            <p class="card-text parrafoCPA">Los cripto-activos pueden ser una gran estrategia para cualquier inversionista ya sea grande
+                                                o pequeño. En el newsletter de esta semana te vamos a dar unos tips sobre la estrategia del
+                                                "costo promedio", cómo...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div> <!-- Siguientes es idem a este div -->
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/avalabs.png" alt="analysis_el_2">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">¿QUÉ ESTÁ PASANDO CON AVALANCHE?</h5>
+                                            <p class="card-text parrafoCPA">Ava Labs lanza puente que permite a los usuarios transferir fondos directamente entre la red 
+                                                Bitcoin y Avalanche , una cadena de bloques de nivel 1 de alto rendimiento que ofrece 
+                                                compatibilidad con la VEM. El puente tokenizará...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/solana.png" alt="analysis_el_3">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">¿EXPLOIT EN SOLANA?</h5>
+                                            <p class="card-text parrafoCPA">Wallets en Solana apuntadas en el último hackeo multimillonario. El exploit parece estar afectando
+                                                a los usuarios de billeteras "calientes" conectadas a Internet. El ecosistema de Solana parece ser 
+                                                víctima del...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/saylor.png" alt="analysis_el_4">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">SAYLOR RENUNCIA A SU CARGO</h5>
+                                            <p class="card-text parrafoCPA">El CEO maximalista de Bitcoin de MicroStrategy, Saylor, entrega el puesto a un diputado y asume el 
+                                                cargo de presidente ejecutivo. Michael Saylor, uno de los patrocinadores de bitcoin más destacados 
+                                                en las empresas...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item active"> <!-- Segunda caja que muestra los 4 articulos -->
+                                <div class="cards-wrapper"> <!-- Articulos envueltos -->
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/average.png" alt="analysis_el_1">
+                                        </div>
+                                        <div class="card-body"> <!-- Cuerpo del articulo -->
+                                            <h5 class="card-title">¡¿Cuándo es el mejor momento de comprar criptos?!</h5>
+                                            <p class="card-text parrafoCPA">Los cripto-activos pueden ser una gran estrategia para cualquier inversionista ya sea grande
+                                                o pequeño. En el newsletter de esta semana te vamos a dar unos tips sobre la estrategia del
+                                                "costo promedio", cómo...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div> <!-- Siguientes es idem a este div -->
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/avalabs.png" alt="analysis_el_2">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">¿QUÉ ESTÁ PASANDO CON AVALANCHE?</h5>
+                                            <p class="card-text parrafoCPA">Ava Labs lanza puente que permite a los usuarios transferir fondos directamente entre la red 
+                                                Bitcoin y Avalanche , una cadena de bloques de nivel 1 de alto rendimiento que ofrece 
+                                                compatibilidad con la VEM. El puente tokenizará...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/solana.png" alt="analysis_el_3">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">¿EXPLOIT EN SOLANA?</h5>
+                                            <p class="card-text parrafoCPA">Wallets en Solana apuntadas en el último hackeo multimillonario. El exploit parece estar afectando
+                                                a los usuarios de billeteras "calientes" conectadas a Internet. El ecosistema de Solana parece ser 
+                                                víctima del...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/saylor.png" alt="analysis_el_4">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">SAYLOR RENUNCIA A SU CARGO</h5>
+                                            <p class="card-text parrafoCPA">El CEO maximalista de Bitcoin de MicroStrategy, Saylor, entrega el puesto a un diputado y asume el 
+                                                cargo de presidente ejecutivo. Michael Saylor, uno de los patrocinadores de bitcoin más destacados 
+                                                en las empresas...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                    </article>
                 </article>
-                <article>
+                <article> <!-- Analsis 3-->
                     <div class="profile">
                         <h2 class="title__h2">Alberto Escobar</h2>
                         <a href="https://twitter.com/Papu_Crypto" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                     </div>
-                    <div class="analisis">
-                        <article>
-                            <img src="img/cryptostudio.jpg" alt="analysis_ae_1" class="imgsize">
-                            <p class="parrafo"><b>LLENANDO LA BRECHA DE CONOCIMIENTO.</b>
-                                El centro independiente de educación y comparación de CryptoStudio promete ayudar a que la adopción 
-                                de criptomonedas se generalice. La falta de conocimiento sigue siendo el mayor obstáculo para la 
-                                adopción de las criptomonedas. CryptoStudio está resolviendo ese problema al ofrecer recursos educativos
-                                y herramientas que permiten a los inversores tomar decisiones informadas y...
-                            </p>
-                        </article>
-                        <article>
-                            <img src="img/microstrategy.webp" alt="analysis_ae_2" class="imgsize">
-                            <p class="parrafo"><b>REPORTE DE MICROSTRATEGY.</b>
-                                MicroStrategy informa un cargo por deterioro de USD 918 millones en tenencias de Bitcoin en el segundo 
-                                trimestre. La empresa de software posee 129.699 bitcoins por un valor aproximado de 3.000 millones de 
-                                dólares. MicroStrategy (MSTR) asumió un cargo por deterioro de activos digitales no monetarios de 
-                                $917,8 millones en sus tenencias de bitcoin (BTC) en el segundo trimestre, frente a $ 170,1 millones en 
-                                el...
-                            </p>
-                        </article>
-                        <article>
-                            <img src="img/janet.jpg" alt="analysis_ae_3" class="imgsize">
-                            <p class="parrafo"><b>"LA ECONOMIA DE EE.UU. ES FUERTE".</b>
-                                Janet Yellen no ve recesión, llama a la economía de EE.UU. "excepcionalmente fuerte". La economía 
-                                estadounidense no está en recesión porque no ha cumplido con los complejos criterios que definirían tal 
-                                recesión económica, dijo el jueves la secretaria del Tesoro, Janet Yellen, durante una conferencia de 
-                                prensa. Ella habló luego de la publicación de los datos del producto interno bruto (PIB) que muestran un...
-                            </p>
-                        </article>
-                        <article>
-                            <img src="img/bitcoin.jpg" alt="analysis_ae_4" class="imgsize">
-                            <p class="parrafo"><b>MARKET WRAP: BITCOIN EMPUJA MÁS ALTO A PESAR DEL INFORME NEGATIVO DEL PIB.</b>
-                                El crecimiento de la economía estadounidense se desacelera, la curva de rendimiento se invierte pero los 
-                                mercados suben de todos modos. El precio de Bitcoin (BTC) continuó su ascenso en las operaciones del jueves, 
-                                aumentando un 4% a pesar de un informe negativo del producto interno bruto (PIB) de EE. UU. ...
-                            </p>
-                        </article>
-                    </div>
+                    <article> <!-- Sección de análisis hechos por el creador -->
+                        <div id="carouselExampleControls3" class="carousel carousel-dark slide" data-bs-touch="false"> <!-- Carousel con indicadores sin movimiento automatico -->
+                            <div class="carousel-inner"> <!-- Contenedor de los articulos -->
+                              <div class="carousel-item active"> <!-- Primer caja que muestra los 4 articulos -->
+                                <div class="cards-wrapper"> <!-- Articulos envueltos -->
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/cryptostudio.png" alt="analysis_ae_1">
+                                        </div>
+                                        <div class="card-body"> <!-- Cuerpo del articulo -->
+                                            <h5 class="card-title">LLENANDO LA BRECHA DE CONOCIMIENTO</h5>
+                                            <p class="card-text parrafoCPA">El centro independiente de educación y comparación de CryptoStudio promete ayudar a que la adopción 
+                                                de criptomonedas se generalice. La falta de conocimiento sigue siendo el mayor obstáculo para...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div> <!-- Siguientes es idem a este div -->
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/microstrategy.png" alt="analysis_ae_2">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">REPORTE DE MICROSTRATEGY</h5>
+                                            <p class="card-text parrafoCPA">MicroStrategy informa un cargo por deterioro de USD 918 millones en tenencias de Bitcoin en el segundo 
+                                                trimestre. La empresa de software posee 129.699 bitcoins por un valor aproximado de 3.000 millones de 
+                                                dólares...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/janet.png" alt="analysis_ae_3">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">"LA ECONOMIA DE EE.UU. ES FUERTE"</h5>
+                                            <p class="card-text parrafoCPA">Janet Yellen no ve recesión, llama a la economía de EE.UU. "excepcionalmente fuerte". La economía 
+                                                estadounidense no está en recesión porque no ha cumplido con los complejos criterios que definirían tal 
+                                                recesión económica, dijo...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/bitcoin.png" alt="analysis_ae_4">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">MARKET WRAP: BITCOIN EMPUJA MÁS ALTO</h5>
+                                            <p class="card-text parrafoCPA">El crecimiento de la economía estadounidense se desacelera, la curva de rendimiento se invierte pero los 
+                                                mercados suben de todos modos. El precio de Bitcoin (BTC) continuó su ascenso en las...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="carousel-item active"> <!-- Segunda caja que muestra los 4 articulos -->
+                                <div class="cards-wrapper"> <!-- Articulos envueltos -->
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/cryptostudio.png" alt="analysis_ae_1">
+                                        </div>
+                                        <div class="card-body"> <!-- Cuerpo del articulo -->
+                                            <h5 class="card-title">LLENANDO LA BRECHA DE CONOCIMIENTO</h5>
+                                            <p class="card-text parrafoCPA">El centro independiente de educación y comparación de CryptoStudio promete ayudar a que la adopción 
+                                                de criptomonedas se generalice. La falta de conocimiento sigue siendo el mayor obstáculo para...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div> <!-- Siguientes es idem a este div -->
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/microstrategy.png" alt="analysis_ae_2">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">REPORTE DE MICROSTRATEGY</h5>
+                                            <p class="card-text parrafoCPA">MicroStrategy informa un cargo por deterioro de USD 918 millones en tenencias de Bitcoin en el segundo 
+                                                trimestre. La empresa de software posee 129.699 bitcoins por un valor aproximado de 3.000 millones de 
+                                                dólares...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/janet.png" alt="analysis_ae_3">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">"LA ECONOMIA DE EE.UU. ES FUERTE"</h5>
+                                            <p class="card-text parrafoCPA">Janet Yellen no ve recesión, llama a la economía de EE.UU. "excepcionalmente fuerte". La economía 
+                                                estadounidense no está en recesión porque no ha cumplido con los complejos criterios que definirían tal 
+                                                recesión económica, dijo...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                    <div class="card"> <!-- Caja de cada analisis -->
+                                        <div class="image-wrapper">
+                                            <img src="./img/bitcoin.png" alt="analysis_ae_4">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">MARKET WRAP: BITCOIN EMPUJA MÁS ALTO</h5>
+                                            <p class="card-text parrafoCPA">El crecimiento de la economía estadounidense se desacelera, la curva de rendimiento se invierte pero los 
+                                                mercados suben de todos modos. El precio de Bitcoin (BTC) continuó su ascenso en las...
+                                            </p>
+                                            <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls3" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls3" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                    </article>
                 </article>
-                <article>
+                <article> <!-- Analsis 4-->
                     <div class="profile">
                         <h2 class="title__h2">Bladimir Gonzalez</h2>
                         <a href="https://twitter.com/Papu_Crypto" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                     </div>
-                    <div class="analisis">
-                        <article>
-                            <img src="img/ethpow.jpg" alt="analysis_bg_1" class="imgsize">
-                            <p class="parrafo"><b>MINERO CHINO AMENAZA CON FORK DE ETHEREUM PARA PRESERVAR POW.</b>
-                                Un minero chino de Bitcoin ha afirmado que un fork de Ethereum para preservar Proof-of-Work (PoW) “llegará pronto”, 
-                                ya que Ethereum se prepara para migrar a su mecanismo de consenso Proof-of-Stake (POS).
-                                Si Ethereum puede mantener su cronograma proyectado actual...
-                            </p>
-                        </article>
-                        <article>
-                            <img src="img/england.webp" alt="analysis_bg_2" class="imgsize">
-                            <p class="parrafo"><b>COMISION DE INGLATERRA.</b>
-                                Proponen reconocer las criptomonedas como un “tipo de propiedad”. La Comisión de Derecho de Inglaterra y Gales 
-                                publicó un documento de consulta que propone crear una nueva forma de propiedad para conferir derechos legales a las 
-                                criptomonedas et al. La comisión cree que esto protegerá a los inversores...
-                            </p>
-                        </article>
-                        <article>
-                            <img src="img/mexico.webp" alt="analysis_bg_3" class="imgsize">
-                            <p class="parrafo"><b>FALTA ADOPCIÓN.</b>
-                                El 70% de profesionales en México están poco preparados para el metaverso. El metaverso es una oportunidad para que 
-                                las empresas mexicanas innoven; no obstante, solo siete de cada 10 profesionistas afirman conocer “muy poco” del metaverso, 
-                                mientras que 26% afirma “haber leído” sobre el tema y solo 13% dijo entender a la perfección sobre el...
-                            </p>
-                        </article>
-                        <article>
-                            <img src="img/argentina.webp" alt="analysis_bg_4" class="imgsize">
-                            <p class="parrafo"><b>ARGENTINOS SIGUEN EN PROBLEMAS.</b>
-                                Argentina limita compra de boletos aéreos en pesos con el fin de recaudar dólares. La faltante de dólares en Argentina se 
-                                encuentra en un punto de extrema delicadeza. Por ello es que cualquier medida que apunte a conservar o generar billetes 
-                                verdes es bienvenida.
-                                En ese sentido Aerolíneas Argentinas limitó la emisión de pasajes aéreos desde Argentina... 
-                            </p>
-                        </article>
-                    </div>
+                    <div id="carouselExampleControls4" class="carousel carousel-dark slide" data-bs-touch="false"> <!-- Carousel con indicadores sin movimiento automatico -->
+                        <div class="carousel-inner"> <!-- Contenedor de los articulos -->
+                          <div class="carousel-item active"> <!-- Primer caja que muestra los 4 articulos -->
+                            <div class="cards-wrapper"> <!-- Articulos envueltos -->
+                                <div class="card"> <!-- Caja de cada analisis -->
+                                    <div class="image-wrapper">
+                                        <img src="./img/ethpow.png" alt="analysis_bg_1">
+                                    </div>
+                                    <div class="card-body"> <!-- Cuerpo del articulo -->
+                                        <h5 class="card-title">MINERO CHINO AMENAZA ETHEREUM</h5>
+                                        <p class="card-text parrafoCPA">Un minero chino de Bitcoin ha afirmado que un fork de Ethereum para preservar Proof-of-Work (PoW) “llegará pronto”, 
+                                            ya que Ethereum se prepara para migrar a su mecanismo de consenso Proof-of-Stake...
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                    </div>
+                                </div> <!-- Siguientes es idem a este div -->
+                                <div class="card"> <!-- Caja de cada analisis -->
+                                    <div class="image-wrapper">
+                                        <img src="./img/england.png" alt="analysis_bg_2">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">COMISION DE INGLATERRA</h5>
+                                        <p class="card-text parrafoCPA">Proponen reconocer las criptomonedas como un “tipo de propiedad”. La Comisión de Derecho de Inglaterra y Gales 
+                                            publicó un documento de consulta que propone crear una nueva forma de propiedad para conferir derechos legales...
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                    </div>
+                                </div>
+                                <div class="card"> <!-- Caja de cada analisis -->
+                                    <div class="image-wrapper">
+                                        <img src="./img/mexico.png" alt="analysis_bg_3">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">FALTA ADOPCIÓN</h5>
+                                        <p class="card-text parrafoCPA">El 70% de profesionales en México están poco preparados para el metaverso. El metaverso es una oportunidad para que 
+                                            las empresas mexicanas innoven; no obstante, solo siete de cada 10 profesionistas afirman conocer “muy poco” del...
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                    </div>
+                                </div>
+                                <div class="card"> <!-- Caja de cada analisis -->
+                                    <div class="image-wrapper">
+                                        <img src="./img/argentina.png" alt="analysis_bg_4">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">ARGENTINOS SIGUEN EN PROBLEMAS</h5>
+                                        <p class="card-text parrafoCPA">Argentina limita compra de boletos aéreos en pesos con el fin de recaudar dólares. La faltante de dólares en Argentina se 
+                                            encuentra en un punto de extrema delicadeza. Por ello es que cualquier medida que apunte a conservar... 
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="carousel-item active"> <!-- Segunda caja que muestra los 4 articulos -->
+                            <div class="cards-wrapper"> <!-- Articulos envueltos -->
+                                <div class="card"> <!-- Caja de cada analisis -->
+                                    <div class="image-wrapper">
+                                        <img src="./img/ethpow.png" alt="analysis_bg_1">
+                                    </div>
+                                    <div class="card-body"> <!-- Cuerpo del articulo -->
+                                        <h5 class="card-title">MINERO CHINO AMENAZA ETHEREUM</h5>
+                                        <p class="card-text parrafoCPA">Un minero chino de Bitcoin ha afirmado que un fork de Ethereum para preservar Proof-of-Work (PoW) “llegará pronto”, 
+                                            ya que Ethereum se prepara para migrar a su mecanismo de consenso Proof-of-Stake...
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                    </div>
+                                </div> <!-- Siguientes es idem a este div -->
+                                <div class="card"> <!-- Caja de cada analisis -->
+                                    <div class="image-wrapper">
+                                        <img src="./img/england.png" alt="analysis_bg_2">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">COMISION DE INGLATERRA</h5>
+                                        <p class="card-text parrafoCPA">Proponen reconocer las criptomonedas como un “tipo de propiedad”. La Comisión de Derecho de Inglaterra y Gales 
+                                            publicó un documento de consulta que propone crear una nueva forma de propiedad para conferir derechos legales...
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                    </div>
+                                </div>
+                                <div class="card"> <!-- Caja de cada analisis -->
+                                    <div class="image-wrapper">
+                                        <img src="./img/mexico.png" alt="analysis_bg_3">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">FALTA ADOPCIÓN</h5>
+                                        <p class="card-text parrafoCPA">El 70% de profesionales en México están poco preparados para el metaverso. El metaverso es una oportunidad para que 
+                                            las empresas mexicanas innoven; no obstante, solo siete de cada 10 profesionistas afirman conocer “muy poco” del...
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                    </div>
+                                </div>
+                                <div class="card"> <!-- Caja de cada analisis -->
+                                    <div class="image-wrapper">
+                                        <img src="./img/argentina.png" alt="analysis_bg_4">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">ARGENTINOS SIGUEN EN PROBLEMAS</h5>
+                                        <p class="card-text parrafoCPA">Argentina limita compra de boletos aéreos en pesos con el fin de recaudar dólares. La faltante de dólares en Argentina se 
+                                            encuentra en un punto de extrema delicadeza. Por ello es que cualquier medida que apunte a conservar... 
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Ir al análisis</a>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls4" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls4" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
                 </article>
-                <div class="btn">   <!-- Botón para cargar más información de otras blockchains -->
+                <div class="boton">   <!-- Botón para cargar más información de otras blockchains -->
                     <hr>
                     <button>Load More</button>
                     <hr>
@@ -308,5 +668,6 @@
             <p>© All right reserved</p>
         </div>
     </footer>
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

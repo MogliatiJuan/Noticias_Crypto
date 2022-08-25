@@ -5,88 +5,112 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Club News | Prices</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- Script para traer iconos de FontAwesome -->
     <script src="https://kit.fontawesome.com/3765723c70.js" crossorigin="anonymous"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
-    <header>
-        <div class="header__bar">   <!-- Barra de iconos -->
-            <div class="header__bar__izq">
-                <i class="fa-solid fa-bars"></i>
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-            <a href="index.html"><img src="img/CryptoClub-removebg-preview.png" alt="Home" class="imgsize"></a>
-            <div class="header__bar__der">                
-                <i class='fas fa-toggle-off'></i>
-                <i class='fas fa-user-circle'></i>
-            </div>
-        </div>
-        <nav class="nav">   <!-- Navegador que quedará fijo -->
-            <ul>
-                <li><a href="news.html">News</a></li>
-                <li><a href="cryptoprojects.html">Crypto Projects</a></li>
-                <li><a href="analysis.html">Analysis</a></li>
-                <li><a href="prices.html">Prices</a></li>
-            </ul>
-        </nav>
-        <div class="ticker">
-            <div class="scroll-parent">
-              <div class="scroll-element primary">
-                <div class="scroll-element--cont">
-                    <img src="img/arg.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>6.637.761,83 ARS</p>
+        <header>
+        <nav class="navbar navbar-expand-lg navFondo"> <!-- Navegador entre paginas y demas -->
+            <div class="container-fluid"> <!-- Adapto 100% responsive -->
+              <a class="navbar-brand" href="#">Menú</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button> <!-- Boton que abre menu hamburguesa -->
+              <div class="collapse navbar-collapse distribucion" id="navbarSupportedContent"> <!-- Contenido en partes -->
+                <div class="menunav"> <!-- Secciones del sitio -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 margen0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./news.html">NEWS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./cryptoprojects.html">CRYPTO PROJECTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./analysis.html">ANALYSIS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./prices.html">PRICES</a>
+                    </ul>
+                    <form class="d-flex" role="search"> <!-- Buscador -->
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                      </form>
                 </div>
-                <div class="scroll-element--cont">
-                    <img src="img/bolivia.webp" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>155.246,72 BOB</p>
+                <div> <!-- Home -->
+                    <a href="index.html"><img src="./img/CryptoClub-removebg-preview.png" alt="Home" class="imgHome"></a>
                 </div>
-                <div class="scroll-element--cont">
-                    <img src="img/brasil.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>123.140,75 BRL</p>
-                </div>
-                <div class="scroll-element--cont">
-                    <img src="img/chile.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>21.431.910,91 CLP</p>
-                </div>
-                <div class="scroll-element--cont">
-                    <img src="img/mex.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>480.680,99 MXN</p>
-                </div>
-              </div>
-              <div class="scroll-element secondary">
-                <div class="scroll-element--cont">
-                    <img src="img/panama.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>23.689,16 PAB</p>
-                </div>
-                <div class="scroll-element--cont">
-                    <img src="img/arg.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>6.637.761,83 ARS</p>
-                </div>
-                <div class="scroll-element--cont">
-                    <img src="img/bolivia.webp" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>155.246,72 BOB</p>
-                </div>
-                <div class="scroll-element--cont">
-                    <img src="img/brasil.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>123.140,75 BRL</p>
-                </div>
-                <div class="scroll-element--cont">
-                    <img src="img/chile.png" class="imgsize--block">
-                    <p>BTC</p>
-                    <p>21.431.910,91 CLP</p>
-                </div>
+                <form class="d-flex header__bar__der"  role="personal"> <!-- Proximamente dark mode y usuario -->
+                    <i class='fas fa-toggle-off'></i>
+                    <i class='fas fa-user-circle'></i>
+                </form>
               </div>
             </div>
-        </div> 
+          </nav>
+            <div class="ticker">  <!-- Ticker que muestra precios horizontalmente de manera indefinida -->
+                <div class="scroll-parent">
+                  <div class="scroll-element primary">
+                    <div class="scroll-element--cont">
+                        <img src="./img/arg.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>6.637.761,83 ARS</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/bolivia.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>155.246,72 BOB</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/brasil.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>123.140,75 BRL</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/chile.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>21.431.910,91 CLP</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/mex.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>480.680,99 MXN</p>
+                    </div>
+                  </div>
+                  <div class="scroll-element secondary">
+                    <div class="scroll-element--cont">
+                        <img src="./img/panama.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>23.689,16 PAB</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/arg.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>6.637.761,83 ARS</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/bolivia.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>155.246,72 BOB</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/brasil.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>123.140,75 BRL</p>
+                    </div>
+                    <div class="scroll-element--cont">
+                        <img src="./img/chile.png" class="imgsize--block">
+                        <p>BTC</p>
+                        <p>21.431.910,91 CLP</p>
+                    </div>
+                  </div>
+                </div>
+            </div> 
     </header>
 
     <main>
@@ -127,83 +151,107 @@
             </article>
             <article> <!-- Apartado donde estarán los precios de btc y eth en distintos paises-->
                 <h2 class="title__h2">Prices of bitcoin and ethereum in local currency</h2>
-                <div class="prices">
-                    <div class="pricesBlock">
-                        <div class="pricesBlock__Up">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col"> <!-- Cada caja en columna-->
+                        <div class="card cardPrices"> <!-- Estilos a caja padre -->
+                        <div class="pricesBlockArriba"> <!-- Caja hijo1 -->
                             <img src="img/arg.png" class="imgsize--block"> <!-- Imagen del país -->
-                            <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
+                            <div>
                                 <p>ARGENTINA</p> <!-- Nombre del país -->
                                 <p>285,82 ARS</p> <!-- Precio moneda local -->
                             </div>
                         </div>
-                        <div class="pricesBlock__Up__btn">
-                            <i class='fab fa-btc'><button>6.637.761,83 ARS</button></i>
-                            <i class='fab fa-ethereum'><button>443.970,73 ARS</button></i>
+                        <div class="card-body"> <!-- Caja hijo2-->
+                            <div class="pricesBlockAbajo__btn"> <!-- Caja boton de precio -->
+                                <i class='fab fa-btc'><button>155.246,72 BOB</button></i>
+                                <i class='fab fa-ethereum'><button>10.972,84 BOB</button></i>
+                            </div>
+                        </div>
                         </div>
                     </div>
-                    <div class="pricesBlock">
-                        <div class="pricesBlock__Up">
-                            <img src="img/bolivia.webp" class="imgsize--block"> <!-- Imagen del país -->
+                    <div class="col"> <!-- Cada caja en columna-->
+                        <div class="card cardPrices"> <!-- Estilos a caja padre -->
+                        <div class="pricesBlockArriba"> <!-- Caja hijo1 -->
+                            <img src="img/bolivia.png" class="imgsize--block"> <!-- Imagen del país -->
                             <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
                                 <p>BOLIVIA</p> <!-- Nombre del país -->
                                 <p>6,68 BOB</p> <!-- Precio moneda local -->
                             </div>
                         </div>
-                        <div class="pricesBlock__Up__btn">
-                            <i class='fab fa-btc'><button>155.246,72 BOB</button></i>
-                            <i class='fab fa-ethereum'><button>10.972,84 BOB</button></i>
-                        </div>
-                    </div>
-                    <div class="pricesBlock">
-                        <div class="pricesBlock__Up">
-                            <img src="img/brasil.png" class="imgsize--block"> <!-- Imagen del país -->
-                            <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
-                                <p>BRASIL</p> <!-- Nombre del país -->
-                                <p>5,30 BRL</p> <!-- Precio moneda local -->
+                        <div class="card-body"> <!-- Caja hijo2-->
+                            <div class="pricesBlockAbajo__btn"> <!-- Caja boton de precio -->
+                                <i class='fab fa-btc'><button>6.637.761,83 ARS</button></i>
+                                <i class='fab fa-ethereum'><button>443.970,73 ARS</button></i>
                             </div>
                         </div>
-                        <div class="pricesBlock__Up__btn">
-                            <i class='fab fa-btc'><button>123.140,75 BRL</button></i>
-                            <i class='fab fa-ethereum'><button>8.721,22 BRL</button></i>
                         </div>
                     </div>
-                    <div class="pricesBlock">
-                        <div class="pricesBlock__Up">
-                            <img src="img/chile.png" class="imgsize--block"> <!-- Imagen del país -->
-                            <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
-                                <p>CHILE</p> <!-- Nombre del país -->
-                                <p>922,84 CLP</p> <!-- Precio moneda local -->
+                    <div class="col"> <!-- Cada caja en columna-->
+                        <div class="card cardPrices"> <!-- Estilos a caja padre -->
+                            <div class="pricesBlockArriba"> <!-- Caja hijo1 -->
+                                <img src="img/brasil.png" class="imgsize--block"> <!-- Imagen del país -->
+                                <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
+                                    <p>BRASIL</p> <!-- Nombre del país -->
+                                    <p>5,30 BRL</p> <!-- Precio moneda local -->
+                                </div>
                             </div>
-                        </div>
-                        <div class="pricesBlock__Up__btn">
-                            <i class='fab fa-btc'><button>21.431.910,91 CLP</button></i>
-                            <i class='fab fa-ethereum'><button>1.510.367,40 CLP</button></i>
+                            <div class="card-body"> <!-- Caja hijo2-->
+                            <div class="pricesBlockAbajo__btn"> <!-- Caja boton de precio -->
+                                <i class='fab fa-btc'><button>123.140,75 BRL</button></i>
+                                <i class='fab fa-ethereum'><button>8.721,22 BRL</button></i>
+                            </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="pricesBlock">
-                        <div class="pricesBlock__Up">
-                            <img src="img/mex.png" class="imgsize--block"> <!-- Imagen del país -->
-                            <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
-                                <p>MEXICO</p> <!-- Nombre del país -->
-                                <p>20,70 MXN</p> <!-- Precio moneda local -->
+                    <div class="col"> <!-- Cada caja en columna-->
+                        <div class="card cardPrices"> <!-- Estilos a caja padre -->
+                            <div class="pricesBlockArriba"> <!-- Caja hijo1 -->
+                                <img src="img/chile.png" class="imgsize--block"> <!-- Imagen del país -->
+                                <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
+                                    <p>CHILE</p> <!-- Nombre del país -->
+                                    <p>922,84 CLP</p> <!-- Precio moneda local -->
+                                </div>
                             </div>
-                        </div>
-                        <div class="pricesBlock__Up__btn">
-                            <i class='fab fa-btc'><button>480.680,99 MXN</button></i>
-                            <i class='fab fa-ethereum'><button>33.940,00 MXN</button></i>
+                            <div class="card-body"> <!-- Caja hijo2-->
+                                <div class="pricesBlockAbajo__btn"> <!-- Caja boton de precio -->
+                                    <i class='fab fa-btc'><button>21.431.910,91 CLP</button></i>
+                                    <i class='fab fa-ethereum'><button>1.510.367,40 CLP</button></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="pricesBlock">
-                        <div class="pricesBlock__Up">
-                            <img src="img/panama.png" class="imgsize--block">    <!-- Imagen del país -->
-                            <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
-                                <p>PANAMA</p> <!-- Nombre del país -->
-                                <p>1,02 PAB</p> <!-- Precio moneda local -->
+                    <div class="col"> <!-- Cada caja en columna-->
+                        <div class="card cardPrices"> <!-- Estilos a caja padre -->
+                            <div class="pricesBlockArriba"> <!-- Caja hijo1 -->
+                                <img src="img/mex.png" class="imgsize--block"> <!-- Imagen del país -->
+                                <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
+                                    <p>MEXICO</p> <!-- Nombre del país -->
+                                    <p>20,70 MXN</p> <!-- Precio moneda local -->
+                                </div>
+                            </div>
+                            <div class="card-body"> <!-- Caja hijo2-->
+                            <div class="pricesBlockAbajo__btn"> <!-- Caja boton de precio -->
+                                <i class='fab fa-btc'><button>480.680,99 MXN</button></i>
+                                <i class='fab fa-ethereum'><button>33.940,00 MXN</button></i>
+                            </div>
                             </div>
                         </div>
-                        <div class="pricesBlock__Up__btn">
-                            <i class='fab fa-btc'><button>23.689,16 PAB</button></i>
-                            <i class='fab fa-ethereum'><button>1.674,35 PAB</button></i>
+                    </div>
+                    <div class="col"> <!-- Cada caja en columna-->
+                        <div class="card cardPrices"> <!-- Estilos a caja padre -->
+                            <div class="pricesBlockArriba"> <!-- Caja hijo1 -->
+                                <img src="img/panama.png" class="imgsize--block"> <!-- Imagen del país -->
+                                <div class="pricesBlock__Up__Titles"> <!-- Los formo una caja -->
+                                    <p>PANAMA</p> <!-- Nombre del país -->
+                                    <p>1,02 PAB</p> <!-- Precio moneda local -->
+                                </div>
+                            </div>
+                            <div class="card-body"> <!-- Caja hijo2-->
+                                <div class="pricesBlockAbajo__btn"> <!-- Caja boton de precio -->
+                                    <i class='fab fa-btc'><button>23.689,16 PAB</button></i>
+                                    <i class='fab fa-ethereum'><button>1.674,35 PAB</button></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -242,5 +290,6 @@
             <p>© All right reserved</p>
         </div>
     </footer>
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

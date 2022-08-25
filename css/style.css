@@ -32,6 +32,36 @@ footer {
     background-color: #687576;
 }
 
+.active { /* Escondo Home p/ desktop */
+    display: none;
+}
+    
+.menunav{
+    display: flex;
+    flex-direction: row;
+}
+.imgHome {
+    height: 55px;
+}
+
+.margen0 {
+    margin-right: 20px !important;
+}
+
+.distribucion {
+    justify-content: space-between;
+}
+
+.navFondo { /* Cambio color por defecto al nav y ajusto medidas */
+    background-color: #B7CCD9;
+    padding: 0;
+}
+
+.navFondo a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
 .header__bar {  /* Posicionar barra de iconos */
     display: flex;
     height: 55px;
@@ -39,7 +69,7 @@ footer {
     justify-content: space-between;
 }
  
-.header__bar__izq i, .header__bar__der i  {   /* Estilo a iconos del lado izquierdo y derecho */
+.header__bar__der i  {   /* Estilo a iconos del lado derecho */
     font-size: 30px;
     padding: 10px;
 }
@@ -52,25 +82,8 @@ footer {
 .parrafo {  /* Estilo a cada texto de cada imagen */
     text-align: justify;
     padding: 8px;
+    margin-bottom: 0;
 }
-
-.nav ul {    /* Posiciono nav */
-    height: 45px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background: #BED1DC;
-    list-style-type: none;
-}
-
-.nav ul li a { 
-    color: #333333;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    padding: 10px;
-}
-
 
 .ticker {    /* Animacion del scrolling infinito */
     display: flex;
@@ -110,6 +123,7 @@ footer {
 
 .scroll-element--cont > p {
     font-weight: 700;
+    margin: 0;
 }
 
 .primary {
@@ -186,19 +200,19 @@ footer {
 
 .links li a {
     text-decoration: none;
+    color: #3f3f3f;
 }
 
 .articulos { /* Seccion de articulos recientes */
     margin: 0 auto;
-    height: 425px;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     background: #dadada;
+    overflow: hidden;
 }
 
-.articulos__1, .articulos__2 { /* Dimensiono articulos */
+.articulos__1, .articulos__2 { /* Dimensiono articulos recientes */
     width: 35%;
-    height: 100%;
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
@@ -212,7 +226,6 @@ footer {
     overflow: hidden;
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
     align-items: center;
 }
 
@@ -225,6 +238,7 @@ footer {
 
 .subscribe ul {
     padding-left: 20px;
+    margin-bottom: 0;
     list-style-type: square;
 }
 
@@ -233,7 +247,14 @@ footer {
     font-weight: 700;
 }
 
-.subscribe input {
+.check { /* Btn suscribirse y Captcha */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.check input:nth-child(1) { /* Primer hijo de check */
     width: 80%;
     margin: 20px;
     background: #86c8f1;
@@ -243,12 +264,13 @@ footer {
     border-radius: 5px;
 }
 
-.mainIndex section { /* Sección Analysis */
-    margin: 0 auto;
-    width: 1250px;
-    display: flex;
-    flex-flow: column wrap;
-    background: #E5E4EA;
+.check input:nth-child(2) { /* Segundo hijo de check */
+    width: 100%;
+    margin: 10px 0;
+    background: #86c8f1;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
 .styleH2 {
@@ -258,15 +280,15 @@ footer {
     color: #555555;
 }
 
-.analysis { /* Dimensiono donde estaran los articulos de Analysis */
+.analysisHome { /* Dimensiono donde estaran los articulos de Analysis en Home */
     width: 100%;
     height: auto;
     display: flex;
     flex-flow: row wrap;
 }
 
-.analysis__cont {   /* Ajusto al 25% del main para que entren las 4 noticias */
-    width: 25%;
+.analysis__cont {   /* Ajusto % del main para que entren las 4 noticias */
+    width: calc(100%/4);
     display: flex;
     flex-flow: column wrap;
     overflow: hidden;
@@ -279,6 +301,7 @@ footer {
 }
 
 .firma{
+    width: 20%;
     display: flex;
     align-items: center;
 }
@@ -286,6 +309,7 @@ footer {
 .contactos, .contactos__ul {
     display: flex;
     align-items: center;
+    margin-bottom: 0;
 }
 
 .contactos__ul li {
@@ -331,11 +355,10 @@ hr {    /* parte footer */
 
 /* Estilo a "News" */
 
-
 .title { /* Estilo a h1 */
     text-align: center;
     padding: 10px 0;
-    font-size: 32px;
+    font-size: 40px;
     text-transform: uppercase;
 }
 
@@ -345,59 +368,39 @@ hr {    /* parte footer */
     flex-flow: row wrap;
 }
 
-.news__arts article { /* Cada articulo */
-    width: 25%;
+.news__arts > article { /* Cada articulo */
+    width: calc(100%/4);
     padding: 10px;
+    background-color: #e0e1e3;
     box-shadow: 0 0 8px 6px #faf9f9;
 }
 
-.btn { /* Caja "Load More" */
+.boton { /* Caja "Load More" */
     padding: 10px 0;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
 }
 
-.btn hr {
+.boton hr {
     width: 40%;
 }
 
-.btn button {
+.boton > button {
     font-size: 18px;
     font-weight: 600;
     padding: 5px;
 }
 
 .events__arts { /* eventos de la semana */
-    padding: 0 5px;
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.events__arts article { /* Cada articulo */
-    width: 33%;
-    margin: 5px auto;
-    padding: 10px;
-    box-shadow: 0 0 5px 5px #faf9f9;
+    padding: 10px 5px;
 }
 
 /* Estilo a "Crypto Projects" */
 
 .title__h2 {
-    font-size: 28px;
-    padding-left: 10px;
-}
-
-.noticias { /* caja de tipo de blockchain */
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.noticias article { /* dimension de caja hijo */
-    width: 24%;
-    margin: 10px auto;
-    background-color: #e0e1e3;
-    box-shadow: 0 0 4px 1px #9f9e9e;
+    font-size: 34px;
+    padding-left: 25px;
 }
 
 /* Estilo a "Analysis" */
@@ -406,20 +409,63 @@ hr {    /* parte footer */
     display: flex;
 }
 
-.profile a {
-    color: #1b199b;
+.carousel-inner { /* Comienzo a dar estilo al carousel */
+    padding: 1em;
 }
 
-.analisis {
+.cards-wrapper {
     display: flex;
+  }
+
+.card { /* Estilo a cada card */
+    width: calc(100%/4);
+    margin: 0 0.5em;
+    border: none;
+    border-radius: 0;
+    background-color: #e0e1e3;
+    box-shadow: 2px 6px 8px 0 #c7bcbc;
+  }
+
+.card--shadow { /* Modifico sombra a card de CRYPTO PROJECTS */
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
 }
 
-.analisis article {
-    width: 25%;
-    margin: 20px 10px;
-    background-color: #edf1f5;
-    box-shadow: 0 0 8px 2px #c7bcbc;
+.cardPrices {
+    width: initial;
+    margin: 10px 2em;
+    border: 2px solid #858282;
+    border-radius: 4px;
 }
+  
+.image-wrapper {
+    height: 10vh;
+    margin: 10px auto;
+  }
+
+.image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+.carousel-control-prev, .carousel-control-next { /* Estilo a flechas */
+    background-color: #e1e1e1;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+.carousel-control-prev span, .carousel-control-next span {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+.parrafoCPA { /* Estilo a p de secciones C.P. y A. */
+    text-align: justify;
+    padding: 0;
+    margin-bottom: 5px;
+  }
 
 /* Estilo a "Prices */
 
@@ -465,46 +511,25 @@ hr {    /* parte footer */
     border-color: #6e6e6e;
 }
 
-.prices {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-}
-
-.pricesBlock {
-    width: 40%;
-    margin: 10px;
-    padding: 10px 0;
-    border: 2px solid #858282 ;
-    border-radius: 4px;
-    background-color: #e5eceb;
-    box-shadow: 0.2px -0.2px 5px 0.2px #a7a4a4 ;
-}
-
-.pricesBlock__Up {
+.pricesBlockArriba {
     padding: 0 20px;
     display: flex;
     align-items: center;
     border-bottom: 2px solid #7a7a7a;
 }
 
-.pricesBlock__Up i {
-    font-size: 25px;
-    padding: 0 5px;
-}
-
-.pricesBlock__Up__Titles p {
+.pricesBlockArriba p {
     padding: 0 10px;
     font-size: 20px;
 }
 
-.pricesBlock__Up__btn {
+.pricesBlockAbajo__btn {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.pricesBlock__Up__btn button {
+.pricesBlockAbajo__btn button {
     margin: 10px;
     height: 50px;
     width: 250px;
@@ -515,13 +540,15 @@ hr {    /* parte footer */
     height: 25px;
 }
 
+
+
 /* APLICANDO MEDIA QUERIES */
 
 @media screen and (max-width: 768px){   /* MODELO TABLET */
 
     body {
         display: grid;
-        grid-template-columns: 1fr repeat(3, 1.5fr) 1fr;
+        grid-template-columns: 1fr repeat(3, 2fr) 1fr;
         grid-template-rows: auto 1fr auto;
         grid-template-areas:
             "header header header header header"
@@ -530,7 +557,15 @@ hr {    /* parte footer */
     }
 
     /* HOME */
-    .ticker {
+    .menunav, .header__bar__der {
+        flex-direction: column;
+    }
+
+    .active { /* Habilito Home p/ tablet y menores */
+        display: block;
+    }
+
+    .ticker, .imgHome { /* Inhabilito ticker e imagen de Home */
         display: none;
     }
 
@@ -563,19 +598,11 @@ hr {    /* parte footer */
     .subscribe{
         width: 50%;
         height: auto;
+        justify-content: space-around;
     }
 
     .subscribe > ul {
         display: none;
-    }
-
-    .analysis{
-        height: auto;
-        flex-flow: row wrap;
-    }
-
-    .analysis__cont {
-        width: 50%;
     }
 
     .contactos__ul li a {
@@ -601,6 +628,19 @@ hr {    /* parte footer */
         width: 49%;
     }
 
+    .card {
+        width: 100%;
+    }
+
+    .card:nth-child(3), .card:nth-child(4){
+        display: none;        
+      }
+
+    .carousel-control-prev, .carousel-control-next{
+          width: 4.5vh;
+          height: 4.5vh;  
+      }
+
     /* ANALYSIS */
     .analisis {
         flex-flow: row wrap;
@@ -622,12 +662,15 @@ hr {    /* parte footer */
         margin: 5px auto;
     }
 
+    .cardPrices{
+        width: initial;
+    }
     .pricesBlock {
         width: 45%;
     }
 
     .pricesBlock__Up__btn button {
-        width: 160px;
+        width: 140px;
     }
 }
 
@@ -691,10 +734,6 @@ hr {    /* parte footer */
         padding: 10px 20px;
     }
 
-    .analysis {
-        flex-flow: column wrap;
-    }
-
     .analysis__cont{
         width: 100%;
     }
@@ -727,12 +766,26 @@ hr {    /* parte footer */
         width: 100%;
     }
 
-    .btn hr{
+    .boton hr{
         width: 35%;
     }
 
     .events__arts > article:nth-child(3) {
         display: block;
+    }
+
+    .card:not(:first-child){
+        display: none;
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .carousel-control-prev, .carousel-control-next{
+      width: 3.5vh;
+      height: 3.5vh;  
     }
 
     /* CRYPTO PROJECTS */
@@ -762,11 +815,6 @@ hr {    /* parte footer */
     .btnCalculator button {
         width: 80%;
         margin: 10px auto;
-    }
-
-    .prices {
-        flex-flow: column wrap;
-        align-content: center;
     }
 
     .pricesBlock {
