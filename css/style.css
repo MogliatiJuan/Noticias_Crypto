@@ -605,6 +605,10 @@ hr {    /* parte footer */
         display: none;
     }
 
+    .analysis__cont{
+        width: calc(100%/2);
+    }
+
     .contactos__ul li a {
         font-size: 16px;
     }
