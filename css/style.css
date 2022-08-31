@@ -24,12 +24,11 @@ header {
 
 main {
     grid-area: main;
-    background: #dad9e0;
 }
 
 footer {
     grid-area: footer;
-    background-color: #687576;
+    background-color: #1F2933;
 }
 
 .active { /* Escondo Home p/ desktop */
@@ -40,6 +39,24 @@ footer {
     display: flex;
     flex-direction: row;
 }
+
+.btnBuscador {
+    border-color: #555555;
+}
+
+.btnBuscador > i {
+    color: #36474f;
+}
+
+.btnBuscador:hover {
+    background-color: #36474f;
+    border-color: #36474f;
+}
+
+.btnBuscador > i:hover {
+    color: #ffffff;
+}
+
 .imgHome {
     height: 55px;
 }
@@ -53,7 +70,7 @@ footer {
 }
 
 .navFondo { /* Cambio color por defecto al nav y ajusto medidas */
-    background-color: #B7CCD9;
+    background-color: #EBF0F2;
     padding: 0;
 }
 
@@ -62,12 +79,11 @@ footer {
     font-weight: bold;
 }
 
-.header__bar {  /* Posicionar barra de iconos */
-    display: flex;
-    height: 55px;
-    background: #B7CCD9;
-    justify-content: space-between;
+.menunav a:hover {
+    background-color: #36474f;
+    color: #ffffff;
 }
+
  
 .header__bar__der i  {   /* Estilo a iconos del lado derecho */
     font-size: 30px;
@@ -85,13 +101,22 @@ footer {
     margin-bottom: 0;
 }
 
+.news__arts > article a, .sub a {
+    text-decoration: none;
+    color: #111111;
+}
+
+.news__arts > article a:hover, .sub a:hover {
+    text-decoration: underline;
+}
+
 .ticker {    /* Animacion del scrolling infinito */
     display: flex;
     align-items: center;
     height: 40px;
     width: 100vw;
     overflow: hidden;
-    background-color: #BED6DD;
+    background-color: #f9f9f9a3;
 }
   
 .scroll-parent {
@@ -153,7 +178,6 @@ footer {
 }
 
 .mainArt { /* Articulo cabecera */
-    background: #CDEAE5;
     margin: 0 auto;
     display: flex;
     flex-flow: row wrap;
@@ -180,6 +204,20 @@ footer {
     height: 75px;
 }
 
+.mainArt__news--btn > button {
+    background-color: #ffffff;
+    border-radius: 6px;
+    border-color:rgb(181, 200, 211);
+    color: #111111;
+}
+
+.mainArt__news--btn > button:hover {
+    background-color: #64a7fd;
+    border-radius: 4px;
+    border-color:rgb(78, 139, 174);
+    color: #ffffff;
+}
+
 .mainArt__news--btn button { /* Estilo a los botones */
     font-size: 20px;
     font-weight: bold;
@@ -203,22 +241,26 @@ footer {
     color: #3f3f3f;
 }
 
+.links li a:hover {
+    text-decoration: underline;
+}
+
 .articulos { /* Seccion de articulos recientes */
     margin: 0 auto;
     display: flex;
     flex-flow: row wrap;
-    background: #dadada;
     overflow: hidden;
 }
 
 .articulos__1, .articulos__2 { /* Dimensiono articulos recientes */
-    width: 35%;
+    width: 34%;
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
 }
 
 .subscribe { /* Contenedor padre de la suscripcion */
+    margin-left: 2px;
     background: #77b7df;
     width: 30%;
     height: 100%;
@@ -280,6 +322,10 @@ footer {
     color: #555555;
 }
 
+.card-footer {
+    background-color: #fbf9f9a1;
+}
+
 .analysisHome { /* Dimensiono donde estaran los articulos de Analysis en Home */
     width: 100%;
     height: auto;
@@ -288,7 +334,7 @@ footer {
 }
 
 .analysis__cont {   /* Ajusto % del main para que entren las 4 noticias */
-    width: calc(100%/4);
+    width: calc(100%/3);
     display: flex;
     flex-flow: column wrap;
     overflow: hidden;
@@ -306,6 +352,10 @@ footer {
     align-items: center;
 }
 
+.firma > p {
+    color: #7b8794;
+}
+
 .contactos, .contactos__ul {
     display: flex;
     align-items: center;
@@ -318,12 +368,15 @@ footer {
 
 .contactos li a {
     text-decoration: none;
-    color: #000000;
+    color: #9aa5b1;
     font-weight: 800;
     font-size: 20px;
     margin: 5px;
     padding: 5px;
-    box-shadow: 0 0 4px 2px  #424242;
+}
+
+.contactos li a:hover {
+    color: #ffffff;
 }
 
 .RRSS {
@@ -334,14 +387,18 @@ footer {
 .RRSS a i {
     font-size: 30px;
     padding: 4px 6px;
-    color: #1b199b;
+    color: #9aa5b1;
+}
+
+.RRSS a i:hover {
+    opacity: .75;
 }
 
 hr {    /* parte footer */
     width: 95%;
     height: 3px;
     margin: 5px auto;
-    background: #000000;
+    background: #9aa5b1;
 }
 
 .hr--width {    /* parte titles */
@@ -353,7 +410,11 @@ hr {    /* parte footer */
     font-weight: 900;
 }
 
-/* Estilo a "News" */
+.copy > p {
+    color: #9aa5b1;
+}
+
+/****************** Estilo a "News" ******************/
 
 .title { /* Estilo a h1 */
     text-align: center;
@@ -369,10 +430,12 @@ hr {    /* parte footer */
 }
 
 .news__arts > article { /* Cada articulo */
-    width: calc(100%/4);
+    width: calc(100%/3);
     padding: 10px;
-    background-color: #e0e1e3;
-    box-shadow: 0 0 8px 6px #faf9f9;
+}
+
+.news__arts article > img {
+    border-radius: 4px;
 }
 
 .boton { /* Caja "Load More" */
@@ -388,22 +451,33 @@ hr {    /* parte footer */
 
 .boton > button {
     font-size: 18px;
-    font-weight: 600;
     padding: 5px;
+    border-radius: 5px;
+    color: #111111;
+    background-color: #dde8f887;
+    border-color: rgba(146, 164, 214, 0.27);
+    border-style: solid;
+    transition: all .3s;
+}
+
+.boton > button:hover {
+    color: #ffffff;
+    background-color: #65abd9;
+    border-color: #5284a4;
 }
 
 .events__arts { /* eventos de la semana */
     padding: 10px 5px;
 }
 
-/* Estilo a "Crypto Projects" */
+/****************** Estilo a "Crypto Projects" ******************/
 
 .title__h2 {
     font-size: 34px;
     padding-left: 25px;
 }
 
-/* Estilo a "Analysis" */
+/****************** Estilo a "Analysis" ******************/
 
 .profile {
     display: flex;
@@ -418,17 +492,11 @@ hr {    /* parte footer */
   }
 
 .card { /* Estilo a cada card */
-    width: calc(100%/4);
+    width: calc(100%/3);
     margin: 0 0.5em;
     border: none;
     border-radius: 0;
-    background-color: #e0e1e3;
-    box-shadow: 2px 6px 8px 0 #c7bcbc;
   }
-
-.card--shadow { /* Modifico sombra a card de CRYPTO PROJECTS */
-    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-}
 
 .cardPrices {
     width: initial;
@@ -438,14 +506,25 @@ hr {    /* parte footer */
 }
   
 .image-wrapper {
-    height: 10vh;
+    height: 17vh;
     margin: 10px auto;
   }
 
 .image-wrapper img {
     max-width: 100%;
     max-height: 100%;
+    border-radius: 15px;
   }
+
+.subrayado > a {
+    color: #111111;
+    text-decoration: none;
+ } 
+
+ .subrayado > a:hover {
+    color: #111111;
+    text-decoration: underline;
+ } 
 
 .carousel-control-prev, .carousel-control-next { /* Estilo a flechas */
     background-color: #e1e1e1;
@@ -467,6 +546,18 @@ hr {    /* parte footer */
     margin-bottom: 5px;
   }
 
+ .btnCustom { /* Estilo a cada boton de card */
+    color: #111111;
+    background-color: #F5F7FA;
+    border-color: #afb0b3;
+ } 
+
+.btnCustom:hover {
+    color: #ffffff;
+    background-color: rgb(142, 169, 185);
+    border-color: rgb(104, 129, 143);
+ } 
+
 /* Estilo a "Prices */
 
 .calculadora {
@@ -484,6 +575,7 @@ hr {    /* parte footer */
 .calculadora__token--height {
     border: 1px solid #000000;
     height: 175px;
+    background-color: #CED6DF70;
 }
 
 .calculadora__token--height h3 {
@@ -588,7 +680,7 @@ hr {    /* parte footer */
     }
 
     .articulos__1{
-        width: 50%;
+        width: 49%;
     }
 
     .articulos__2 {
@@ -638,12 +730,16 @@ hr {    /* parte footer */
 
     .card:nth-child(3), .card:nth-child(4){
         display: none;        
-      }
+    }
 
     .carousel-control-prev, .carousel-control-next{
-          width: 4.5vh;
-          height: 4.5vh;  
-      }
+        width: 4.5vh;
+        height: 4.5vh;  
+    }
+
+    .image-wrapper{
+        height: 12vh;
+    }
 
     /* ANALYSIS */
     .analisis {
@@ -673,9 +769,11 @@ hr {    /* parte footer */
         width: 45%;
     }
 
-    .pricesBlock__Up__btn button {
+    .pricesBlockAbajo__btn button {
         width: 140px;
     }
+
+
 }
 
 @media screen and (max-width: 480px) {  /* MODELO MOBILE */
@@ -825,7 +923,7 @@ hr {    /* parte footer */
         width: 90%;
     }
 
-    .pricesBlock__Up__btn button {
+    .pricesBlockAbajo__btn button {
         width: 260px;
     }
 }
