@@ -1,0 +1,142 @@
+header {
+    grid-area: header;
+
+    .navFondo { /* Cambio color por defecto al nav y ajusto medidas */
+        background-color: $navcolor;
+        padding: 0;
+
+        a {
+            font-weight: bold;  
+        }
+
+        .distribucion {
+            justify-content: space-between;
+
+            .menunav{
+                display: $df;
+                flex-direction: row;
+
+                .margen0{
+                    margin-right: 20px !important;
+
+                    li {
+                        .active {
+                            display: none;
+                        }
+
+                        > a:hover {
+                            background-color: $hover-menubgcolor;
+                            color: $hover-menucolor;
+                        }
+                    }
+                }
+
+                form {
+                    .btnBuscador {
+                        border-color: $lupa-bcolor;
+
+                        &:hover {
+                            background-color: $lupahover-bgcolor;
+                            border-color: $lupahover-bcolor;
+                        }
+
+                        > i {
+                            color: $ilupa-color;
+
+                            &:hover {
+                                color: $ilupahover-color;
+                            }
+                        }
+                    }
+                }
+            }
+
+            div {
+                .imgHome{
+                    height: 55px;
+                }
+            }
+
+            .header__bar__der {
+                padding: 10px;
+
+                > i {
+                    font-size: 30px;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+
+    .ticker {
+        display: $df;
+        align-items: center;
+        height: 40px;
+        width: 100vw;
+        overflow: hidden;
+        background-color: $ticker-bgcolor;
+
+        .scroll-parent {
+            position: relative;
+            width: 100vw;
+            height: 100%;
+            overflow-x: hidden;
+
+            .scroll-element {
+                width: inherit;
+                height: inherit;
+                position: absolute;
+                left: 0%;
+                top: 0%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                .scroll-element--cont{
+                    width: 15%;
+                    padding: 3px;
+                    border-radius: 4px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+
+                    .imgsize--block{
+                        width: 35px;
+                        height: 25px;
+                    }
+
+                    > p {
+                        font-weight: 700;
+                        margin: 0;
+                    }
+                }
+            }
+            
+            .primary {
+                animation: primary $durationanimation linear infinite;
+            }
+
+            .secondary{
+                animation: secondary $durationanimation linear infinite; 
+            }
+
+            @keyframes primary {
+                from {
+                  left: 0%;
+                }
+                to {
+                  left: -100%;
+                }
+            }
+              
+            @keyframes secondary {
+                from {
+                  left: 100%;
+                }
+                to {
+                  left: 0%;
+                }
+            }
+        }
+    }
+}

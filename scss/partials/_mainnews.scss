@@ -1,0 +1,96 @@
+main {
+    
+    section {
+
+        .title {
+            @include title(10px 0, 40px, center, uppercase);
+        }
+
+        .news__arts {
+            padding: 0 5px;
+            display: $df;
+            flex-flow: row wrap;
+
+            > article {
+                width: calc(100%/3);
+                padding: 10px;
+
+                img {
+                    @include img(100%, 100%, 10px);
+                }
+
+                .parrafo {
+                    @extend %texto;
+                }
+            }
+        }
+
+        .boton {
+            padding: 10px 0;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+
+            hr {
+                @include hr(40%, 3px, auto, #9aa5b1);
+            }
+
+            > button {
+                @include loadmore(18px, 5px, 5px, #111111, #dde8f887, rgba(146, 164, 214, 0.27), solid, all .3s);
+                
+                &:hover{
+                    @include hoverloadmore(#ffffff, #65abd9, #5284a4);
+                }
+            }
+        }
+    }
+
+    section{
+
+        h2{
+
+            a{
+                @include h2-style(5px, $h2size, $h2deco, #555555); 
+
+                &:hover {
+                    color: #555555;
+                    opacity: .75;
+                }
+            }
+        }
+
+        hr {
+            @include hr(99%, 3px, 5px auto, #9aa5b1);
+        }
+
+        .events__arts{
+            padding: 10px 5px;
+
+            .card {
+                @include card(100%/3, 0 .5em, none, 0);
+
+                img {
+                    width: 100%;
+                }
+
+                .card-body {
+                    h5 {
+                        
+                        a {
+                            @include h5card(#111111, none);
+
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+
+                    p {
+                        @extend %texto;
+                        padding: 0; 
+                    }
+                }
+            }
+        }
+    }
+}

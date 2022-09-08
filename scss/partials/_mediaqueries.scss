@@ -1,0 +1,425 @@
+@media screen and (max-width: 768px){   /* MODELO TABLET */
+    body {
+        display: $dg;
+        grid-template-columns: map-get($grid-tablet, columna);
+        grid-template-rows: map-get($grid-tablet, fila);
+        grid-template-areas: map-get($grid-tablet, area);
+
+        header {
+
+            .navFondo {
+
+                .distribucion {
+
+                    .menunav, .header__bar__der {
+                        flex-direction: column;
+                    }
+
+                    .imgHome{
+                        display: none;
+                    }
+
+                    .menunav { 
+
+                        .margen0{
+
+                            li {
+                                .active {
+                                    display: block;
+                                }
+                            }
+                        }   
+                    }
+                }
+            }
+
+            .ticker {
+                display: none;
+            }
+        }
+        main{
+                .mainArt {
+                    flex-direction: column;
+                    align-content: space-around;
+
+                    .mainArt__news {
+                        width: 100%;
+        
+                        .mainArt__news__btn {
+                            height: 100%;
+                        }
+                    }
+                }
+
+                .articulos{
+                    height: auto;
+                    flex-direction: row;
+        
+                    .articulos__1{
+                        width: 49%;
+                    }
+                    
+                    .articulos__2{
+                        display: none;
+                    }
+
+                    .subscribe{
+                        width: 50%;
+                        height: auto;
+                        justify-content: space-around;
+        
+                        ul {
+                            display: none;
+                        }
+                    }
+                }
+
+                .news__arts {
+
+                    > article {
+                        width: 50%;
+                    }
+                }
+
+                .card:nth-child(3){
+                    display: none;
+                }
+            }
+
+        main {
+
+            section {
+
+                article{
+
+                    .carousel{
+
+                        .carousel-inner{
+
+                            .carousel-item{
+
+                                .cards-wrapper{
+
+                                    .card {
+                                        width: 50%;
+
+                                        .image-wrapper{
+                                            height: 12vh;
+                                        }
+                                    }
+                        
+                                    .card:nth-child(3){
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+
+                        .carousel-control-prev {
+                            width: 4.5vh;
+                            height: 4.5vh;
+                        }
+            
+                        .carousel-control-next {
+                            width: 4.5vh;
+                            height: 4.5vh;
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            
+            section {
+
+                article {
+
+                    .calculadora {
+                        flex-flow: column wrap;
+
+                        .calculadora__token {
+                            width: 100%;
+                        }
+        
+                        .calculadora__chart {
+                            width: 100%;
+                            margin: 5px auto;
+                        }
+                    }
+                }
+
+                article {
+                    
+                    .cardPrices {
+                        margin: 5px auto;
+                        width: 100%;
+
+                        .card-body {
+
+                            .pricesBlockAbajo__btn {
+        
+                                button {
+                                    width: 160px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+            footer {
+                grid-area: footer;
+                background-color: $bgfooter;
+        
+                section {
+                    .fyc {
+                        
+                        .contactos{
+
+                            .contactos__ul {
+            
+                                li {
+            
+                                    > a {
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {  /* MODELO MOBILE */
+
+    body {
+        display: $dg;
+        grid-template-columns: map-get($grid-mobile, columna);
+        grid-template-rows: map-get($grid-mobile, fila);
+        grid-template-areas: map-get($grid-mobile, area);
+
+        header {
+    
+            .ticker {
+                display: none;
+            }
+        }
+
+        main { 
+    
+            .mainArt{
+    
+                .mainArt__img{
+                    display: none;
+                }
+                .mainArt__news{
+    
+                    .mainArt__news__btn{
+    
+                        > button {
+                            width: 50%;
+                        }
+                    }
+    
+                    article{
+                        .links {
+    
+                            > li {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .articulos{
+                flex-direction: column;
+    
+                .articulos__1, .articulos__2{
+                    width: 100%;
+                    display: block;
+                }
+
+                .subscribe{
+                    width: 100%;
+    
+                    ul {
+                        width: 100%;
+                        display: block;
+                    }
+    
+                    .check{
+                        width: 100%;
+                        display: $df;
+                        flex-flow: row nowrap;
+                        align-items: center;
+                        justify-content: space-around;
+    
+                        > input {
+                            width: auto;
+                            padding: 10px 20px;
+                        }
+                    }
+                }
+            }
+    
+            section{
+    
+                .analysisHome{
+    
+                    .analysis__cont {
+                        width: 100%;
+                    }
+                }
+
+                .boton {
+                    
+                    hr{
+                        width: 35%;
+                    }
+                }
+
+                .events__arts {
+                    .card{
+                        width: 90%;
+                        margin: 10px auto;
+                    }
+                }
+            }
+
+            .news__arts {
+
+                > article {
+                    width: 100%;
+                }
+            }
+            
+            .card:not(:first-child){
+                display: none;
+            }
+        }
+
+        main {
+
+            section {
+
+                article{
+
+                    .carousel{
+
+                        .carousel-inner{
+
+                            .carousel-item{
+
+                                .cards-wrapper{
+
+                                    .card {
+                                        width: 90%;
+                                        margin: 10px auto;
+
+                                        .image-wrapper{
+                                            height: 12vh;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .carousel-control-prev {
+                            width: 3.5vh;
+                            height: 3.5vh;
+                        }
+            
+                        .carousel-control-next {
+                            width: 3.5vh;
+                            height: 3.5vh;
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            
+            section{
+
+                article{
+
+                    .calculadora{
+
+                        .calculadora__token{
+                            height: auto;
+            
+                            .calculadora__token__block{
+                                height: auto;
+
+                                .btnCalculator{
+                                    flex-flow: column wrap;
+                                    align-items: center;
+
+                                    button{
+                                        width: 80%;
+                                        margin: 10px auto;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                article{
+
+                    .cardPrices{
+                        width: 90%;
+                        margin: 10px auto;
+
+                        .card-body {
+                    
+                            .pricesBlockAbajo__btn {
+        
+                                button {
+                                    width: 260px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        footer {
+            grid-area: footer;
+            background-color: $bgfooter;
+    
+            section {
+                .fyc {
+                    height: 80px;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-items: center;
+    
+                    .firma{
+                        height: 55px;
+                    }
+
+                    .contactos {
+                        width: 90%;
+                        height: 100%;
+
+                        .contactos__ul {
+                            height: 100%;
+                            flex-flow: row wrap;
+                            justify-content: center;
+                            align-items: center;
+                        }
+    
+                    }
+                }
+    
+            }
+        }
+    }
+}

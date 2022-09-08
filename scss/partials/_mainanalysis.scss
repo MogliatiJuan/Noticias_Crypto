@@ -1,0 +1,15 @@
+main {
+
+    section {
+
+        article {
+
+            > article {
+
+                .profile {
+                    display: $df;
+                }
+            }
+        }
+    }
+}

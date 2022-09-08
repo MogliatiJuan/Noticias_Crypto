@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Club News</title>
+    <meta name="keywords" content="noticias, cripto, ultimas noticias, crypto, blockchain, analisis, token, bitcoin, ethereum">
+    <meta name="description" content="Sitio web de analisis de proyectos blockchain, criptomonedas y noticias cripto">
+    <title>Crypto Club News | Inicio</title>
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <!-- Script para traer iconos de FontAwesome -->
@@ -28,16 +30,16 @@
                         <a class="nav-link active" aria-current="page" href="./index.html">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./news.html">NEWS</a>
+                        <a class="nav-link" href="./pages/news.html">NEWS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./cryptoprojects.html">CRYPTO PROJECTS</a>
+                        <a class="nav-link" href="./pages/cryptoprojects.html">CRYPTO PROJECTS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./analysis.html">ANALYSIS</a>
+                        <a class="nav-link" href="./pages/analysis.html">ANALYSIS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./prices.html">PRICES</a>
+                        <a class="nav-link" href="./pages/prices.html">PRICES</a>
                     </ul>
                     <form class="d-flex" role="search"> <!-- Buscador -->
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -45,7 +47,7 @@
                       </form>
                 </div>
                 <div> <!-- Home -->
-                    <a href="index.html"><img src="./img/CryptoClub-removebg-preview.png" alt="Home" class="imgHome"></a>
+                    <a href="index.html"><img src="../img/CryptoClub-removebg-preview.png" alt="Home" class="imgHome"></a>
                 </div>
                 <form class="d-flex header__bar__der"  role="personal"> <!-- Proximamente dark mode y usuario -->
                     <i class='fas fa-toggle-off'></i>
@@ -58,54 +60,54 @@
                 <div class="scroll-parent">
                   <div class="scroll-element primary">
                     <div class="scroll-element--cont">
-                        <img src="./img/arg.png" class="imgsize--block">
+                        <img src="./img/arg.png" alt="argentina" class="imgsize--block">
                         <p>BTC</p>
                         <p>6.637.761,83 ARS</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="./img/bolivia.png" class="imgsize--block">
+                        <img src="./img/bolivia.png" alt="bolivia" class="imgsize--block">
                         <p>BTC</p>
                         <p>155.246,72 BOB</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="./img/brasil.png" class="imgsize--block">
+                        <img src="./img/brasil.png" alt="brasil" class="imgsize--block">
                         <p>BTC</p>
                         <p>123.140,75 BRL</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="./img/chile.png" class="imgsize--block">
+                        <img src="./img/chile.png" alt="chile" class="imgsize--block">
                         <p>BTC</p>
                         <p>21.431.910,91 CLP</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="./img/mex.png" class="imgsize--block">
+                        <img src="./img/mex.png" alt="mexico" class="imgsize--block">
                         <p>BTC</p>
                         <p>480.680,99 MXN</p>
                     </div>
                   </div>
                   <div class="scroll-element secondary">
                     <div class="scroll-element--cont">
-                        <img src="./img/panama.png" class="imgsize--block">
+                        <img src="./img/panama.png" alt="panma" class="imgsize--block">
                         <p>BTC</p>
                         <p>23.689,16 PAB</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="./img/arg.png" class="imgsize--block">
+                        <img src="./img/arg.png" alt="argentina" class="imgsize--block">
                         <p>BTC</p>
                         <p>6.637.761,83 ARS</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="./img/bolivia.png" class="imgsize--block">
+                        <img src="./img/bolivia.png" alt="bolivia" class="imgsize--block">
                         <p>BTC</p>
                         <p>155.246,72 BOB</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="./img/brasil.png" class="imgsize--block">
+                        <img src="./img/brasil.png" alt="brasil" class="imgsize--block">
                         <p>BTC</p>
                         <p>123.140,75 BRL</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="./img/chile.png" class="imgsize--block">
+                        <img src="./img/chile.png" alt="chile" class="imgsize--block">
                         <p>BTC</p>
                         <p>21.431.910,91 CLP</p>
                     </div>
@@ -116,22 +118,22 @@
 
     <main>
         <article class="mainArt">
-            <div class="mainArt--img">
+            <div class="mainArt__img">
                 <img src="./img/btc.png" alt="img-main" class="imgsize">
             </div>
             <article class="mainArt__news">
-                <div class="mainArt__news--btn">
-                    <button>Editor's Choice</button>
-                    <button>Latest News</button>
+                <div class="mainArt__news__btn">
+                    <button class="botonindex">Editor's Choice</button>
+                    <button class="botonindex">Latest News</button>
                 </div>
                 <article>
                     <ul class="links">    <!-- Articulos que variarán según los botones anteriores-->
-                        <li><a href="">Crece interés de fondos institucionales por los activos digitales</a></li>
-                        <li><a href="">El proyecto de ley de stablecoins de EEUU se retrasará hasta septiembre</a></li>
-                        <li><a href="">Demandas legales contra Terra comienzan a acumularse</a></li>
-                        <li><a href="">Los “camarones” compran BTC más rápido que en el pico del bull market de 2017</a></li>
-                        <li><a href="">El TVL de DeFi se dispara en más de $10 mil millones</a></li>
-                        <li><a href="">¿Qué son las CBDC? La nueva apuesta de los bancos centrales</a></li>
+                        <li><a href="#">Crece interés de fondos institucionales por los activos digitales</a></li>
+                        <li><a href="#">El proyecto de ley de stablecoins de EEUU se retrasará hasta septiembre</a></li>
+                        <li><a href="#">Demandas legales contra Terra comienzan a acumularse</a></li>
+                        <li><a href="#">Los “camarones” compran BTC más rápido que en el pico del bull market de 2017</a></li>
+                        <li><a href="#">El TVL de DeFi se dispara en más de $10 mil millones</a></li>
+                        <li><a href="#">¿Qué son las CBDC? La nueva apuesta de los bancos centrales</a></li>
                     </ul>
                 </article>
             </article>
@@ -139,7 +141,7 @@
         <article class="articulos">
             <div class="articulos__1"> <!-- Artículo reciente 1-->
                 <img src="./img/dolar.png" alt="latestnew1" class="imgsize">
-                <p class="parrafo sub"><a href="#">El pasado 22 de julio el llamado dólar blue se cotizó en 338 pesos (ARS), generando un 
+                <p class="parrafo"><a href="#">El pasado 22 de julio el llamado dólar blue se cotizó en 338 pesos (ARS), generando un 
                     revuelo en las redes sociales. Muchos se jactaron de que confían más en bitcoin para 
                     ahorrar, pese a su volatilidad de precio, que en la propia moneda nacional que, lejos 
                     de valorizarse, solo se devalúa...</a>
@@ -147,7 +149,7 @@
             </div>
             <div class="articulos__2">   <!-- Artículo reciente 2-->
                 <img src="./img/adopcion.png" alt="latestnew2" class="imgsize">
-                <p class="parrafo sub"><a href="#">El Banco Interamericano de Desarrollo (BID), el banco BBVA y la operadora de los mercados
+                <p class="parrafo"><a href="#">El Banco Interamericano de Desarrollo (BID), el banco BBVA y la operadora de los mercados
                     financieros españoles, BME, completaron la primera emisión en España de un bono listado
                     en un mercado regulado y registrado en una plataforma basada en una blockchain...</a>
                 </p>
@@ -169,22 +171,22 @@
             </article>
         </article>
         <section>
-            <h2><a href="analysis.html" class="styleH2">Analysis</a></h2> <!-- Parte de la página análisis -->
+            <h2><a href="analysis.html">Analysis</a></h2> <!-- Parte de la página análisis -->
             <article class="analysisHome">
                 <article class="analysis__cont">
-                    <img src="./img/eth.png" alt="context1" class="imgsize">
-                    <p class="parrafo sub"><a href="./analysis.html">Ethereum lanzó una nueva actualización de red importante llamada Grey Glacier, retrasando
+                    <img src="./img/eth.png" alt="eth" class="imgsize">
+                    <p class="parrafo"><a href="./pages/analysis.html">Ethereum lanzó una nueva actualización de red importante llamada Grey Glacier, retrasando
                         la “bomba de dificultad” por otros 100 días. Aquí está todo lo que hay que saber sobre 
                         la actualización Grey Glacier de la red Ethereum...</a></p>
                 </article>
                 <article class="analysis__cont">
-                    <img src="./img/celsius.png" alt="context2" class="imgsize">
-                    <p class="parrafo sub"><a href="./analysis.html">Celsius (CEL) fue una de las criptomonedas más afectadas en la caída del mercado de mayo
+                    <img src="./img/celsius.png" alt="celsius" class="imgsize">
+                    <p class="parrafo"><a href="./pages/analysis.html">Celsius (CEL) fue una de las criptomonedas más afectadas en la caída del mercado de mayo
                         y continúa desplomándose en junio tras una gran liquidación por parte de las ballenas...</a></p>
                 </article>
                 <article class="analysis__cont">
-                <img src="./img/stocks.png" alt="context3" class="imgsize">
-                    <p class="parrafo sub"><a href="./analysis.html">Muchos entusiastas de las criptomonedas han oído hablar del indicador Pi Cycle Top, que
+                <img src="./img/stocks.png" alt="stocks" class="imgsize">
+                    <p class="parrafo"><a href="./pages/analysis.html">Muchos entusiastas de las criptomonedas han oído hablar del indicador Pi Cycle Top, que
                         ha predicho “mágicamente” los picos de varios mercados alcistas anteriores. Sin embargo...</a>
                     </p>
                 </article>
@@ -196,17 +198,17 @@
         <section>
             <div class="fyc">
                 <div class="firma">
-                    <img src="/img/CryptoClub-removebg-preview.png" alt="Logo" class="imgsize">
+                    <img src="./img/CryptoClub-removebg-preview.png" alt="Logo" class="imgsize">
                     <p>Crypto Club</p>
                 </div>
                 <div class="contactos"> <!-- Parte de contacto -->
                     <ul class="contactos__ul">
-                        <li><a href="">Contact</a></li>
-                        <li><a href="">About us</a></li>
-                        <li><a href="">Our team</a></li>
-                        <li><a href="">Privacy policy</a></li>
-                        <li><a href="">Advertisement</a></li>
-                        <li><a href="">Join us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Our team</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Advertisement</a></li>
+                        <li><a href="#">Join us</a></li>
                     </ul>
                 </div>
             </div>
