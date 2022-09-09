@@ -1,0 +1,7 @@
+body {
+    display: $dg;
+    grid-template-columns: map-get($grid-desktop, columna);
+    grid-template-rows: map-get($grid-desktop, fila);
+    grid-template-areas: map-get($grid-desktop, area);
+    background-color: $bodycolor;
+}

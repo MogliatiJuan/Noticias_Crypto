@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+$bodycolor: #ffffff;
+$navcolor: #EBF0F2;
+$hover-menucolor: #ffffff;
+$hover-menubgcolor: #36474f;
+$lupa-bcolor:  #555555;
+$lupahover-bgcolor: #36474f;
+$lupahover-bcolor:  #36474f;
+$ilupa-color: #36474f;
+$ilupahover-color: #ffffff;
+$ticker-bgcolor: #f9f9f9a3;
+$calculadora-bgcolor: #E5E8EC70;
+$calculadoraboton-bgcolor: #f5f7fa;
+$calculadoraboton-bcolor: #6e6e6e;
+$pricesbtn-bgcolor: #ffffff;
+$bgfooter: #1F2933;
+$durationanimation: 14s;
+$dg: grid;
+$df: flex;
+$ahover: underline;
+$h2size: 32px;
+$h2deco: none;
+
+
+$grid-desktop: (
+    columna: repeat(5, 1fr),
+    fila: auto 1fr auto,
+    area: "header header header header header" "...... main   main   main   ......" "footer footer footer footer footer"
+);
+
+$grid-tablet: (
+    columna: 1fr repeat(3, 2fr) 1fr,
+    fila: auto 1fr auto,
+    area: "header header header header header" "...... main main main ......" "footer footer footer footer footer"
+);
+
+$grid-mobile: (
+    columna: repeat(5, 1fr),
+    fila: auto 1fr auto,
+    area: "header header header header header" "main   main   main   main  main" "footer footer footer footer footer"
+);
+
+@mixin img($mwidth, $mheight, $rborder){
+    max-width: $mwidth;
+    max-height: $mheight;
+    border-radius: $rborder;
+}
+
+@mixin hr($width, $height, $margin, $background) {
+    width: $width;
+    height: $height;
+    margin: $margin;
+    background: $background;
+}
+
+@mixin title($padding, $font-size, $text-aling, $text-transform){
+    padding: $padding;
+    font-size: $font-size;
+    text-align: $text-aling;
+    text-transform: $text-transform;
+}
+
+@mixin loadmore($font-size, $padding, $border-radius, $color, $background-color, $border-color, $border-style, $transition){
+    font-size: $font-size;
+    padding: $padding;
+    border-radius: $border-radius;
+    color: $color;
+    background-color: $background-color;
+    border-color: $border-color;
+    border-style: $border-style;
+    transition: $transition;
+}
+
+@mixin hoverloadmore($color, $background-color, $border-color){
+    color: $color;
+    background-color: $background-color;
+    border-color: $border-color;
+}
+
+@mixin h2-style($padding, $font-size, $text-decoration, $color) {
+    padding: $padding;
+    font-size: $font-size;
+    text-decoration: $text-decoration;
+    color: $color;
+}
+
+@mixin card($width, $margin, $border, $border-radius){
+    width: $width;
+    margin: $margin;
+    border: $border;
+    border-radius: $border-radius;
+}
+
+@mixin h5card($color, $text-decoration){
+    color: $color;
+    text-decoration: $text-decoration;
+}
+
+@mixin btnCustom($color, $background-color, $border-color){
+    color: $color;
+    background-color: $background-color;
+    border-color: $border-color;
+}
+
+@mixin hover-btnCustom($color, $background-color, $border-color){
+    color: $color;
+    background-color: $background-color;
+    border-color: $border-color;
+}
+
+@mixin flechas-card($height, $width, $top, $background-color, $border-radius, $transform){
+    height: $height;
+    width: $width;
+    top: $top;
+    background-color: $background-color;
+    border-radius: $border-radius;
+    transform: $transform;
+}
+
+@mixin flechas-span($height, $width){
+    height: $height;
+    width: $width;
+}

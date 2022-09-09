@@ -1,0 +1,93 @@
+footer {
+    grid-area: footer;
+    background-color: $bgfooter;
+
+    section {
+        .fyc { /* firma y contacto */
+            height: 55px;
+            display: flex;
+            justify-content: space-evenly;
+
+            .firma{
+                width: 20%;
+                display: flex;
+                align-items: center;
+
+                .imgsize{
+                    @include img(100%, 100%, 10px);
+                }
+
+                > p {
+                    margin: 10px;
+                    font-weight: 700;
+                    color: #7b8794;
+                }
+            }
+            .contactos, .contactos__ul {
+                display: flex;
+                align-items: center;
+                margin-bottom: 0;
+
+                li {
+                    list-style-type: none;
+
+                    > a {
+                        text-decoration: none;
+                        color: #9aa5b1;
+                        font-weight: 800;
+                        font-size: 20px;
+                        margin: 5px;
+                        padding: 5px;
+
+                        &:hover {
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+        }
+
+        .RRSS {
+            display: flex;
+            justify-content: space-evenly;
+
+            > a {
+                > i {
+                    font-size: 30px;
+                    padding: 4px 6px;
+
+                    &:hover {
+                        opacity: .75;
+                    }
+                }
+            }
+        }
+    }
+
+    hr {
+        @include hr(95%, 3px, 5px auto, #9aa5b1);
+    }
+
+    .copy{
+        text-align: center;
+        font-weight: 900;
+
+        > p {
+            color: #9aa5b1;
+        }
+    }
+}
+
+$color-social-networks: (
+    twitter: rgb(29, 155, 240),
+    facebook: #1877f2,
+    instagram:  #833AB4,
+    youtube: #c4302b,
+    up-right-from-square: #405DE6
+);
+
+@each $socialnetwork, $color in $color-social-networks {
+    .fa-#{$socialnetwork} {
+        color: $color;
+    }
+}

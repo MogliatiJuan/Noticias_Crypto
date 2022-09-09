@@ -1,0 +1,88 @@
+main {
+
+    section {
+
+        article {
+
+            .title__h2 {
+                font-size: 34px;
+                padding-left: 25px;
+            }
+
+            .carousel {
+
+                 > .carousel-inner {
+                    padding: 1em;
+
+                    > .carousel-item {
+                        
+                        > .cards-wrapper {
+                            display: flex;
+
+                            > .card {
+                                @include card(100%/3, 0 .5em, none, 0);
+
+                                > .image-wrapper {
+                                    height: 17vh;
+                                    margin: 10px auto;
+
+                                    img {
+                                        @include img(100%, 100%, 15px);
+                                    }
+                                }
+
+                                .card-body {
+                                    
+                                    h5 {
+
+                                        a {
+                                            @include h5card(#111111, none);
+
+                                            &:hover {
+                                                text-decoration: underline;
+                                            }
+                                        }
+                                    }
+
+                                    .parrafoCPA {
+                                        @extend %text;
+                                    }
+
+                                    .btnCustom {
+                                        @include btnCustom(#111111, #F5F7FA, #afb0b3);
+
+                                        &:hover {
+                                            @include hover-btnCustom(#ffffff, rgb(142, 169, 185), rgb(104, 129, 143));
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .carousel-control-prev {
+                    @include flechas-card(6vh, 6vh, 50%, #e1e1e1, 50%, translateY(-50%));
+
+                    .visually-hidden {
+                        @include flechas-span(1.5rem, 1.5rem);
+                    }
+                }
+
+                .carousel-control-next {
+                    @include flechas-card(6vh, 6vh, 50%, #e1e1e1, 50%, translateY(-50%));
+
+                    span {
+                        @include flechas-span(1.5rem, 1.5rem);
+                    }
+                }
+            }
+        }
+    }
+}
+
+%text {
+    text-align: justify;
+    padding: 0;
+    margin-bottom: 5px;
+}

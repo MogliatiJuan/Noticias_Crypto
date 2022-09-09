@@ -1,0 +1,102 @@
+main {
+
+    section {
+
+        article {
+
+            .calculadora {
+                display: $df;
+                margin: 10px;
+
+                .calculadora__token {
+                    width: 45%;
+                    padding-right: 5px;
+                    display: flex;
+                    flex-flow: column wrap;
+
+                    .calculadora__token__block{
+                        border: 1px solid #000000;
+                        border-radius: 3px;
+                        background-color: $calculadora-bgcolor;
+
+                        h3 {
+                            padding: 5px 15px;
+                        }
+
+                        .btnCalculator {
+                            margin: 15px 0;
+                            display: $df;
+                            justify-content: space-around;
+                            
+                            button {
+                                height: 40px;
+                                width: 150px;
+                                font-size: 18px;
+                                font-weight: 500;
+                                background-color: $calculadoraboton-bgcolor;
+                                border-color: $calculadoraboton-bcolor;
+                            }
+                        }
+                    }
+                }
+
+                .calculadora__chart {
+                    margin: auto;
+                    padding-left: 5px;
+
+                    img {
+                        @include img(100%, 100%, 10px);
+                    }
+                }
+            }
+        }
+
+        article {
+
+            .cardPrices {
+                width: initial;
+                margin: 10px 2em;
+                border: 2px solid #858282;
+                border-radius: 4px;
+                background-color: #ecf0ed3d;
+
+                .pricesBlockArriba {
+                    padding: 0 20px;
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 2px solid #7a7a7a;
+
+                    img {
+                        width: 35px;
+                        height: 25px; 
+                    }
+
+                    div {
+                        p {
+                            padding: 0 10px;
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .card-body {
+                    
+                    .pricesBlockAbajo__btn {
+                        display: $df;
+                        flex-direction: column;
+                        align-items: center;
+
+                        button {
+                            margin: 10px;
+                            height: 50px;
+                            width: 250px;
+                            background-color: $pricesbtn-bgcolor;
+                            border-radius: 7px;
+                            border-style: ridge;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
