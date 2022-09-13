@@ -5,8 +5,11 @@ header {
         background-color: $navcolor;
         padding: 0;
 
-        a {
-            font-weight: bold;  
+        div {
+
+            .imgHome{
+                height: 70px;
+            }
         }
 
         .distribucion {
@@ -24,9 +27,13 @@ header {
                             display: none;
                         }
 
-                        > a:hover {
-                            background-color: $hover-menubgcolor;
-                            color: $hover-menucolor;
+                        > a {
+                            font-weight: 600;
+
+                            &:hover {
+                                background-color: $hover-menubgcolor;
+                                color: $hover-menucolor;
+                            }
                         }
                     }
                 }
@@ -51,14 +58,27 @@ header {
                 }
             }
 
-            div {
-                .imgHome{
-                    height: 55px;
-                }
-            }
-
             .header__bar__der {
-                padding: 10px;
+
+                div {
+
+                    input {
+                        font-size: 20px;
+                        margin: 15px;
+
+                        &:checked {
+                            background-color: #575b60;
+                            border-color: #575b60;
+                        }
+
+                        &:focus {
+                            border-color: #575b60;
+                            box-shadow: 0px 0px 4px #575b60;
+                            background-color: #575b60;
+                            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+                        }
+                    }
+                }
 
                 > i {
                     font-size: 30px;

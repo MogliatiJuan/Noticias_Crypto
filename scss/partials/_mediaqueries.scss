@@ -9,26 +9,34 @@
 
             .navFondo {
 
-                .distribucion {
+                .container-fluid {
 
-                    .menunav, .header__bar__der {
-                        flex-direction: column;
+                    img {
+                        height: 50px;
                     }
 
-                    .imgHome{
-                        display: none;
-                    }
+                    .distribucion {
 
-                    .menunav { 
+                        .header__bar__der {
+                            flex-direction: row;
 
-                        .margen0{
-
-                            li {
-                                .active {
-                                    display: block;
-                                }
+                            .form-switch {
+                                padding-left: 0;
                             }
-                        }   
+                        }
+    
+                        .menunav { 
+                            flex-direction: column;
+
+                            .margen0{
+    
+                                li {
+                                    .active {
+                                        display: block;
+                                    }
+                                }
+                            }   
+                        }
                     }
                 }
             }
@@ -174,20 +182,40 @@
                 background-color: $bgfooter;
         
                 section {
+
                     .fyc {
-                        
+                        height: auto;
+
+                        .firma {
+
+                            .imgsize {
+                                height: 70px;
+                            }
+
+                            p {
+                                font-size: 20px;
+                            }
+                        }
+
                         .contactos{
+                            flex-flow: row wrap;
 
                             .contactos__ul {
-            
+                                flex-flow: row wrap;
+
                                 li {
-            
+                                    margin: 5px;
+
                                     > a {
-                                        font-size: 16px;
+                                        font-size: 20px;
                                     }
                                 }
                             }
                         }
+                    }
+
+                    .RRSS {
+                        margin: 15px auto;
                     }
                 }
         }
@@ -333,11 +361,13 @@
                         .carousel-control-prev {
                             width: 3.5vh;
                             height: 3.5vh;
+                            left: 2%;
                         }
             
                         .carousel-control-next {
                             width: 3.5vh;
                             height: 3.5vh;
+                            left: 90%;
                         }
                     }
                 }
@@ -350,40 +380,23 @@
 
                 article{
 
-                    .calculadora{
+                    .row {
+                        margin: 0;
 
-                        .calculadora__token{
-                            height: auto;
-            
-                            .calculadora__token__block{
-                                height: auto;
+                        div {
 
-                                .btnCalculator{
-                                    flex-flow: column wrap;
-                                    align-items: center;
-
-                                    button{
-                                        width: 80%;
-                                        margin: 10px auto;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                article{
-
-                    .cardPrices{
-                        width: 90%;
-                        margin: 10px auto;
-
-                        .card-body {
-                    
-                            .pricesBlockAbajo__btn {
+                            .cardPrices{
+                                width: 90%;
+                                margin: 10px auto;
         
-                                button {
-                                    width: 260px;
+                                .card-body {
+                            
+                                    .pricesBlockAbajo__btn {
+                
+                                        button {
+                                            width: 260px;
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -397,22 +410,22 @@
             background-color: $bgfooter;
     
             section {
+
                 .fyc {
-                    height: 80px;
                     flex-direction: row;
-                    flex-wrap: nowrap;
-                    align-items: center;
+                    flex-wrap: wrap;
     
                     .firma{
-                        height: 55px;
+                        width: 100%;
+                        margin: 5px auto;
+                        justify-content: space-evenly;
                     }
 
                     .contactos {
-                        width: 90%;
-                        height: 100%;
+                        width: 100%;
 
                         .contactos__ul {
-                            height: 100%;
+                            padding-left: 0;
                             flex-flow: row wrap;
                             justify-content: center;
                             align-items: center;

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="noticias, cripto, ultimas noticias, crypto, blockchain, analisis, token, bitcoin, ethereum, economia, binance smart chain, bsc, polygon, web3, trader, calculadora, conversor, conversion">
-    <meta name="description" content="Sitio web de analisis de proyectos blockchain, criptomonedas, noticias cripto y conversion de tokens">
+    <meta name="description" content="Calculadora para averiguar precios de tokens entre sí. Precios de BTC y ETH en distintos paises.">
     <title>Crypto Club News | Prices</title>
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="../css/estilo.css">  
 </head>
 <body>
-        <header>
+    <header>
         <nav class="navbar navbar-expand-lg navFondo"> <!-- Navegador entre paginas y demas -->
             <div class="container-fluid"> <!-- Adapto 100% responsive -->
-              <a class="navbar-brand">Menú</a>
+                <a href="../index.html"><img src="../img/CryptoClub-removebg-preview.png" alt="Home" class="imgHome"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button> <!-- Boton que abre menu hamburguesa -->
@@ -43,76 +43,75 @@
                     <form class="d-flex" role="search"> <!-- Buscador -->
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success btnBuscador" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                      </form>
-                </div>
-                <div> <!-- Home -->
-                    <a href="../index.html"><img src="../img/CryptoClub-removebg-preview.png" alt="Home" class="imgHome"></a>
+                    </form>
                 </div>
                 <form class="d-flex header__bar__der"  role="personal"> <!-- Proximamente dark mode y usuario -->
-                    <i class='fas fa-toggle-off'></i>
+                    <div class="form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                    </div>
                     <i class='fas fa-user-circle'></i>
                 </form>
               </div>
             </div>
-          </nav>
-            <div class="ticker">  <!-- Ticker que muestra precios horizontalmente de manera indefinida -->
-                <div class="scroll-parent">
-                  <div class="scroll-element primary">
+        </nav>
+        <div class="ticker">  <!-- Ticker que muestra precios horizontalmente de manera indefinida -->
+            <div class="scroll-parent">
+                <div class="scroll-element primary">
                     <div class="scroll-element--cont">
-                        <img src="../img/arg.png" alt="argentina" class="imgsize--block">
+                        <img src="./img/arg.png" alt="argentina" class="imgsize--block">
                         <p>BTC</p>
                         <p>6.637.761,83 ARS</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="../img/bolivia.png" alt="bolivia" class="imgsize--block">
+                        <img src="./img/bolivia.png" alt="bolivia" class="imgsize--block">
                         <p>BTC</p>
                         <p>155.246,72 BOB</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="../img/brasil.png" alt="brasil" class="imgsize--block">
+                        <img src="./img/brasil.png" alt="brasil" class="imgsize--block">
                         <p>BTC</p>
                         <p>123.140,75 BRL</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="../img/chile.png" alt="chile" class="imgsize--block">
+                        <img src="./img/chile.png" alt="chile" class="imgsize--block">
                         <p>BTC</p>
                         <p>21.431.910,91 CLP</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="../img/mex.png" alt="mexico" class="imgsize--block">
+                        <img src="./img/mex.png" alt="mexico" class="imgsize--block">
                         <p>BTC</p>
                         <p>480.680,99 MXN</p>
                     </div>
-                  </div>
-                  <div class="scroll-element secondary">
+                </div>
+                <div class="scroll-element secondary">
                     <div class="scroll-element--cont">
-                        <img src="../img/panama.png" alt="panama" class="imgsize--block">
+                        <img src="./img/panama.png" alt="panma" class="imgsize--block">
                         <p>BTC</p>
                         <p>23.689,16 PAB</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="../img/arg.png" alt="argentina" class="imgsize--block">
+                        <img src="./img/arg.png" alt="argentina" class="imgsize--block">
                         <p>BTC</p>
                         <p>6.637.761,83 ARS</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="../img/bolivia.png" alt="bolivia" class="imgsize--block">
+                        <img src="./img/bolivia.png" alt="bolivia" class="imgsize--block">
                         <p>BTC</p>
                         <p>155.246,72 BOB</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="../img/brasil.png" alt="brasil" class="imgsize--block">
+                        <img src="./img/brasil.png" alt="brasil" class="imgsize--block">
                         <p>BTC</p>
                         <p>123.140,75 BRL</p>
                     </div>
                     <div class="scroll-element--cont">
-                        <img src="../img/chile.png" alt="chile" class="imgsize--block">
+                        <img src="./img/chile.png" alt="chile" class="imgsize--block">
                         <p>BTC</p>
                         <p>21.431.910,91 CLP</p>
                     </div>
-                  </div>
                 </div>
-            </div> 
+            </div>
+        </div> 
     </header>
 
     <main>
@@ -125,24 +124,84 @@
                     <div class="calculadora__token">
                         <div class="calculadora__token__block"> <!-- Conversor moneda local a token-->
                             <h3>Local currency</h3>
-                            <div class="btnCalculator">
-                                <button><i class='fab fa-btc'></i> Crypto/Token</button>
-                                <button>Currency</button>
+                            <div class="btnCalculator__seleccion">
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class='fab fa-btc'></i> Crypto/Token
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                      <li><img src="../img/bitcoin.svg.png" alt="bitcoin"><a class="dropdown-item" href="#">BTC - bitcoin</a></li>
+                                      <li><img src="../img/ethereum-eth.svg" alt="ether"><a class="dropdown-item" href="#">ETH - ether</a></li>
+                                    </ul>
+                                    <button  type="button" class="btn btn-outline-dark">Local Currency</button>
+                                </div>
                             </div>
-                            <div class="btnCalculator">
-                                <button><i class='fab fa-btc'></i> Amount</button>
-                                <button>Result</button>
+                            <div class="btnCalculator__resultado">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-outline-dark">1</button>
+                                    <button type="button" class="btn btn-outline-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span>BTC</span>
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#">BTC</a></li>
+                                      <li><a class="dropdown-item" href="#">mBTC</a></li>
+                                      <li><a class="dropdown-item" href="#">sat</a></li>
+                                    </ul>
+                                </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-outline-dark">21.221,09</button>
+                                    <button type="button" class="btn btn-outline-dark" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span>ARS</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div class="calculadora__token__block"> <!-- Conversor de token a otro token-->
                             <h3>Cryptocurrency</h3>
-                            <div class="btnCalculator">
-                                <button><i class='fab fa-btc'></i> Crypto/Token</button>
-                                <button><i class='fab fa-btc'></i> Crypto/Token</button>
+                            <div class="btnCalculator__seleccion">
+                                <div class="dropdown">
+                                    <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class='fab fa-btc'></i> BTC
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                      <li><img src="../img/bitcoin.svg.png" alt="bitcoin"><a class="dropdown-item" href="#">BTC - bitcoin</a></li>
+                                      <li><img src="../img/ethereum-eth.svg" alt="ether"><a class="dropdown-item" href="#">ETH - ether</a></li>
+                                    </ul>
+                                    <button class="btn btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa-brands fa-ethereum"></i> ETH
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                                      <li><img src="../img/bitcoin.svg.png" alt="bitcoin"><a class="dropdown-item" href="#">BTC - bitcoin</a></li>
+                                      <li><img src="../img/ethereum-eth.svg" alt="ether"><a class="dropdown-item" href="#">ETH - ether</a></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="btnCalculator">
-                                <button><i class='fab fa-btc'></i> Amount</button>
-                                <button><i class='fab fa-btc'></i> Amount</button>
+                            <div class="btnCalculator__resultado">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-outline-dark">1</button>
+                                    <button type="button" class="btn btn-outline-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span>BTC</span>
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#">BTC</a></li>
+                                      <li><a class="dropdown-item" href="#">mBTC</a></li>
+                                      <li><a class="dropdown-item" href="#">sat</a></li>
+                                    </ul>
+                                  </div>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-outline-dark">1</button>
+                                    <button type="button" class="btn btn-outline-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span>ETH</span>
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                      <li><a class="dropdown-item" href="#">ETH</a></li>
+                                      <li><a class="dropdown-item" href="#">Gwei</a></li>
+                                      <li><a class="dropdown-item" href="#">wei</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -156,19 +215,19 @@
                 <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col"> <!-- Cada caja en columna-->
                         <div class="card cardPrices"> <!-- Estilos a caja padre -->
-                        <div class="pricesBlockArriba"> <!-- Caja hijo1 -->
-                            <img src="../img/arg.png" alt="argentina"> <!-- Imagen del país -->
-                            <div>
-                                <p>ARGENTINA</p> <!-- Nombre del país -->
-                                <p>285,82 ARS</p> <!-- Precio moneda local -->
+                            <div class="pricesBlockArriba"> <!-- Caja hijo1 -->
+                                <img src="../img/arg.png" alt="argentina"> <!-- Imagen del país -->
+                                <div>
+                                    <p>ARGENTINA</p> <!-- Nombre del país -->
+                                    <p>285,82 ARS</p> <!-- Precio moneda local -->
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-body"> <!-- Caja hijo2-->
-                            <div class="pricesBlockAbajo__btn"> <!-- Caja boton de precio -->
-                                <i class='fab fa-btc'><button>155.246,72 BOB</button></i>
-                                <i class='fab fa-ethereum'><button>10.972,84 BOB</button></i>
+                            <div class="card-body"> <!-- Caja hijo2-->
+                                <div class="pricesBlockAbajo__btn"> <!-- Caja boton de precio -->
+                                    <i class='fab fa-btc'><button>155.246,72 BOB</button></i>
+                                    <i class='fab fa-ethereum'><button>10.972,84 BOB</button></i>
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                     <div class="col"> <!-- Cada caja en columna-->

@@ -62,15 +62,15 @@ main {
                 }
 
                 .carousel-control-prev {
-                    @include flechas-card(6vh, 6vh, 50%, #e1e1e1, 50%, translateY(-50%));
+                    @include flechas-card(6vh, 6vh, 50%, -6% , #e1e1e1, 50%, translateY(-50%));
 
-                    .visually-hidden {
+                    span {
                         @include flechas-span(1.5rem, 1.5rem);
                     }
                 }
 
                 .carousel-control-next {
-                    @include flechas-card(6vh, 6vh, 50%, #e1e1e1, 50%, translateY(-50%));
+                    @include flechas-card(6vh, 6vh, 50%, 100%, #e1e1e1, 50%, translateY(-50%));
 
                     span {
                         @include flechas-span(1.5rem, 1.5rem);

@@ -4,6 +4,7 @@ footer {
 
     section {
         .fyc { /* firma y contacto */
+            margin: 15px auto;
             height: 55px;
             display: flex;
             justify-content: space-evenly;
@@ -14,11 +15,13 @@ footer {
                 align-items: center;
 
                 .imgsize{
-                    @include img(100%, 100%, 10px);
+                    height: 70px;
+                    border-radius: 10px;
                 }
 
                 > p {
                     margin: 10px;
+                    font-size: 25px;
                     font-weight: 700;
                     color: #7b8794;
                 }
@@ -29,6 +32,7 @@ footer {
                 margin-bottom: 0;
 
                 li {
+                    margin: 0 5px;
                     list-style-type: none;
 
                     > a {
@@ -48,12 +52,14 @@ footer {
         }
 
         .RRSS {
+            margin: 10px;
             display: flex;
+            flex-flow: row wrap;
             justify-content: space-evenly;
 
             > a {
                 > i {
-                    font-size: 30px;
+                    font-size: 40px;
                     padding: 4px 6px;
 
                     &:hover {

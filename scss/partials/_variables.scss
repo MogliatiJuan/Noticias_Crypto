@@ -24,7 +24,7 @@ $h2deco: none;
 
 
 $grid-desktop: (
-    columna: repeat(5, 1fr),
+    columna: 1fr 2fr 2fr 2fr 1fr,
     fila: auto 1fr auto,
     area: "header header header header header" "...... main   main   main   ......" "footer footer footer footer footer"
 );
@@ -109,10 +109,11 @@ $grid-mobile: (
     border-color: $border-color;
 }
 
-@mixin flechas-card($height, $width, $top, $background-color, $border-radius, $transform){
+@mixin flechas-card($height, $width, $top, $left, $background-color, $border-radius, $transform){
     height: $height;
     width: $width;
     top: $top;
+    left: $left;
     background-color: $background-color;
     border-radius: $border-radius;
     transform: $transform;

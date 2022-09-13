@@ -9,10 +9,11 @@ main {
                 margin: 10px;
 
                 .calculadora__token {
-                    width: 45%;
+                    width: 60%;
                     padding-right: 5px;
-                    display: flex;
+                    display: $df;
                     flex-flow: column wrap;
+                    justify-content: center;
 
                     .calculadora__token__block{
                         border: 1px solid #000000;
@@ -23,18 +24,56 @@ main {
                             padding: 5px 15px;
                         }
 
-                        .btnCalculator {
+                        .btnCalculator__seleccion {
+                            margin: 15px 0;
+                            display: $df;
+
+                            .dropdown {
+                                width: 100%;
+                                display: flex;
+                                justify-content: space-around;
+
+                                button {
+                                    height: 40px;
+                                    width: 160px;
+                                    font-size: 18px;
+                                    font-weight: 500;
+                                }
+                                
+                                .dropdown-menu {
+
+                                     li {
+                                        padding: 5px;
+                                        display: $df;
+                                        flex-flow: row wrap;
+                                        align-items: center;
+
+                                        img { 
+                                            height: 35px;
+                                        }
+
+                                        .dropdown-item {
+                                            width: auto;
+                                            padding: 0 10px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .btnCalculator__resultado {
                             margin: 15px 0;
                             display: $df;
                             justify-content: space-around;
-                            
-                            button {
-                                height: 40px;
-                                width: 150px;
-                                font-size: 18px;
-                                font-weight: 500;
-                                background-color: $calculadoraboton-bgcolor;
-                                border-color: $calculadoraboton-bcolor;
+
+                            .btn-group {
+
+                                > :nth-child(1) {
+                                    height: 40px;
+                                    width: 130px;
+                                    font-size: 17px;
+                                    font-weight: 500;
+                                }
                             }
                         }
                     }
@@ -53,46 +92,53 @@ main {
 
         article {
 
-            .cardPrices {
-                width: initial;
-                margin: 10px 2em;
-                border: 2px solid #858282;
-                border-radius: 4px;
-                background-color: #ecf0ed3d;
+            div {
 
-                .pricesBlockArriba {
-                    padding: 0 20px;
-                    display: flex;
-                    align-items: center;
-                    border-bottom: 2px solid #7a7a7a;
+                div {
 
-                    img {
-                        width: 35px;
-                        height: 25px; 
-                    }
-
-                    div {
-                        p {
-                            padding: 0 10px;
-                            font-size: 20px;
+                    .cardPrices {
+                        width: initial;
+                        margin: 10px 2em;
+                        border: 2px solid #858282;
+                        border-radius: 4px;
+                        background-color: #ecf0ed3d;
+        
+                        .pricesBlockArriba {
+                            padding: 0 20px;
+                            display: flex;
+                            align-items: center;
+                            border-bottom: 2px solid #7a7a7a;
+        
+                            img {
+                                width: 35px;
+                                height: 25px; 
+                            }
+        
+                            div {
+                                
+                                p {
+                                    padding: 0 10px;
+                                    font-size: 20px;
+                                }
+                            }
                         }
-                    }
-                }
-
-                .card-body {
-                    
-                    .pricesBlockAbajo__btn {
-                        display: $df;
-                        flex-direction: column;
-                        align-items: center;
-
-                        button {
-                            margin: 10px;
-                            height: 50px;
-                            width: 250px;
-                            background-color: $pricesbtn-bgcolor;
-                            border-radius: 7px;
-                            border-style: ridge;
+        
+                        .card-body {
+                            
+                            .pricesBlockAbajo__btn {
+                                display: $df;
+                                flex-direction: column;
+                                align-items: center;
+        
+                                button {
+                                    margin: 10px;
+                                    height: 50px;
+                                    width: 250px;
+                                    background-color: $pricesbtn-bgcolor;
+                                    border-radius: 7px;
+                                    border-style: ridge;
+                                }
+                            }
                         }
                     }
                 }
