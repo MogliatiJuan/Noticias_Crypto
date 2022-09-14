@@ -356,7 +356,7 @@ main section article .carousel .carousel-control-prev {
   height: 6vh;
   width: 6vh;
   top: 50%;
-  left: -6%;
+  left: -5%;
   background-color: #e1e1e1;
   border-radius: 50%;
   transform: translateY(-50%); }
@@ -602,10 +602,10 @@ footer {
       body main section article .calculadora .calculadora__chart {
         width: 100%;
         margin: 5px auto; }
-    body main section article .cardPrices {
+    body main section article div div .cardPrices {
       margin: 5px auto;
       width: 100%; }
-      body main section article .cardPrices .card-body .pricesBlockAbajo__btn button {
+      body main section article div div .cardPrices .card-body .pricesBlockAbajo__btn button {
         width: 160px; }
     body footer {
       grid-area: footer;

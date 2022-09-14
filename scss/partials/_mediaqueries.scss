@@ -159,16 +159,22 @@
 
                 article {
                     
-                    .cardPrices {
-                        margin: 5px auto;
-                        width: 100%;
+                    div {
 
-                        .card-body {
+                        div {
 
-                            .pricesBlockAbajo__btn {
+                            .cardPrices {
+                                margin: 5px auto;
+                                width: 100%;
         
-                                button {
-                                    width: 160px;
+                                .card-body {
+        
+                                    .pricesBlockAbajo__btn {
+                
+                                        button {
+                                            width: 160px;
+                                        }
+                                    }
                                 }
                             }
                         }

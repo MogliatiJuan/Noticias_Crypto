@@ -62,7 +62,7 @@ main {
                 }
 
                 .carousel-control-prev {
-                    @include flechas-card(6vh, 6vh, 50%, -6% , #e1e1e1, 50%, translateY(-50%));
+                    @include flechas-card(6vh, 6vh, 50%, -5% , #e1e1e1, 50%, translateY(-50%));
 
                     span {
                         @include flechas-span(1.5rem, 1.5rem);
