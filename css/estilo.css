@@ -126,7 +126,7 @@ main .mainArt .mainArt__news .mainArt__news__btn .botonindex, main .articulos .s
 
 main .articulos .parrafo, main section .analysisHome .analysis__cont .parrafo, main section .news__arts > article .parrafo, main section .events__arts .card .card-body p {
   text-align: justify;
-  padding: 8px;
+  padding: 10px 20px;
   margin-bottom: 0; }
   main .articulos .parrafo > a, main section .analysisHome .analysis__cont .parrafo > a, main section .news__arts > article .parrafo > a, main section .events__arts .card .card-body p > a {
     text-decoration: none;
@@ -180,7 +180,7 @@ main {
     overflow: hidden;
     justify-content: space-between; }
     main .articulos .articulos__1, main .articulos .articulos__2 {
-      width: 34%;
+      width: 33%;
       display: flex;
       flex-wrap: wrap;
       overflow: hidden; }
@@ -236,6 +236,7 @@ main {
     main section .analysisHome .analysis__cont {
       /* Ajusto % del main para que entren las 3 noticias */
       width: 33%;
+      padding: 0 10px;
       display: flex;
       flex-flow: column wrap;
       overflow: hidden; }
@@ -256,7 +257,9 @@ main section .news__arts {
   flex-flow: row wrap; }
   main section .news__arts > article {
     width: calc(100%/3);
-    padding: 10px; }
+    padding: 10px 20px;
+    display: flex;
+    flex-flow: column wrap; }
     main section .news__arts > article img {
       max-width: 100%;
       max-height: 100%;
@@ -304,6 +307,7 @@ main section hr {
 main section .events__arts {
   padding: 10px 5px; }
   main section .events__arts .card {
+    padding: 0 10px;
     width: 33.33333%;
     margin: 0 0.5em;
     border: none;
@@ -332,7 +336,7 @@ main section article .carousel > .carousel-inner {
       border: none;
       border-radius: 0; }
       main section article .carousel > .carousel-inner > .carousel-item > .cards-wrapper > .card > .image-wrapper {
-        height: 17vh;
+        height: 20vh;
         margin: 10px auto; }
         main section article .carousel > .carousel-inner > .carousel-item > .cards-wrapper > .card > .image-wrapper img {
           max-width: 100%;
@@ -389,7 +393,7 @@ main section article .calculadora {
   margin: 10px; }
   main section article .calculadora .calculadora__token {
     width: 60%;
-    padding-right: 5px;
+    padding-right: 20px;
     display: flex;
     flex-flow: column wrap;
     justify-content: center; }
@@ -472,7 +476,7 @@ footer {
   background-color: #1F2933; }
   footer section .fyc {
     /* firma y contacto */
-    margin: 15px auto;
+    margin: 18px auto;
     height: 55px;
     display: flex;
     justify-content: space-evenly; }
@@ -571,6 +575,8 @@ footer {
       flex-direction: row; }
       body main .articulos .articulos__1, body main .articulos .articulos__2 {
         width: 49%; }
+        body main .articulos .articulos__1 p, body main .articulos .articulos__2 p {
+          padding: 10px 5px; }
       body main .articulos .articulos__2 {
         display: none; }
       body main .articulos .subscribe {
@@ -583,6 +589,8 @@ footer {
       width: 50%; }
     body main .card:nth-child(3) {
       display: none; }
+    body main section .analysisHome .analysis__cont .parrafo {
+      padding: 10px 5px; }
     body main section article .carousel .carousel-inner .carousel-item .cards-wrapper .card {
       width: 50%; }
       body main section article .carousel .carousel-inner .carousel-item .cards-wrapper .card .image-wrapper {
@@ -598,7 +606,8 @@ footer {
     body main section article .calculadora {
       flex-flow: column wrap; }
       body main section article .calculadora .calculadora__token {
-        width: 100%; }
+        width: 100%;
+        padding-bottom: 15px; }
       body main section article .calculadora .calculadora__chart {
         width: 100%;
         margin: 5px auto; }
@@ -612,10 +621,12 @@ footer {
       background-color: #1F2933; }
       body footer section .fyc {
         height: auto; }
-        body footer section .fyc .firma .imgsize {
-          height: 70px; }
-        body footer section .fyc .firma p {
-          font-size: 20px; }
+        body footer section .fyc .firma {
+          width: 40%; }
+          body footer section .fyc .firma .imgsize {
+            height: 70px; }
+          body footer section .fyc .firma p {
+            font-size: 20px; }
         body footer section .fyc .contactos {
           flex-flow: row wrap; }
           body footer section .fyc .contactos .contactos__ul {
@@ -646,9 +657,11 @@ footer {
       flex-direction: column; }
       body main .articulos .articulos__1, body main .articulos .articulos__2, body main .articulos .articulos__2 {
         width: 100%;
+        padding: 10px;
         display: block; }
       body main .articulos .subscribe {
-        width: 100%; }
+        width: 100%;
+        margin-bottom: 10px; }
         body main .articulos .subscribe ul {
           width: 100%;
           display: block; }
@@ -676,7 +689,7 @@ footer {
       width: 90%;
       margin: 10px auto; }
       body main section article .carousel .carousel-inner .carousel-item .cards-wrapper .card .image-wrapper {
-        height: 12vh; }
+        height: 15vh; }
     body main section article .carousel .carousel-control-prev {
       width: 3.5vh;
       height: 3.5vh;

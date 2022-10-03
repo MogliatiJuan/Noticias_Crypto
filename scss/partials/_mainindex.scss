@@ -18,7 +18,7 @@
 
 %texto {
     text-align: justify;
-    padding: 8px;
+    padding: 10px 20px;
     margin-bottom: 0;
         
     > a {
@@ -99,7 +99,7 @@ main {
         justify-content: space-between;
 
         .articulos__1{
-            width: 34%;
+            width: 33%;
             display: flex;
             flex-wrap: wrap;
             overflow: hidden;
@@ -182,6 +182,7 @@ main {
 
             .analysis__cont { /* Ajusto % del main para que entren las 3 noticias */
                 width: 33%;
+                padding: 0 10px;
                 display: flex;
                 flex-flow: column wrap;
                 overflow: hidden;
