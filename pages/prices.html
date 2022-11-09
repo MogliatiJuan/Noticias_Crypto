@@ -54,7 +54,7 @@
               </div>
             </div>
         </nav>
-        <div class="ticker">  <!-- Ticker que muestra precios horizontalmente de manera indefinida -->
+        <!-- <div class="ticker">  Ticker que muestra precios horizontalmente de manera indefinida 
             <div class="scroll-parent">
                 <div class="scroll-element primary">
                     <div class="scroll-element--cont">
@@ -111,7 +111,44 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>  -->
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <div class="tradingview-widget-copyright"><a href="https://es.tradingview.com/markets/" rel="noopener" target="_blank"><span class="blue-text">Mercados</span></a> de TradingView</div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+        {
+        "symbols"= [
+        {
+            "proName": "FOREXCOM:SPXUSD",
+            "title": "S&P 500"
+        },
+        {
+            "proName": "FOREXCOM:NSXUSD",
+            "title": "US 100"
+        },
+        {
+            "proName": "FX_IDC:EURUSD",
+            "title": "EUR/USD"
+        },
+        {
+            "proName": "BITSTAMP:BTCUSD",
+            "title": "Bitcoin"
+        },
+        {
+            "proName": "BITSTAMP:ETHUSD",
+            "title": "Ethereum"
+        }
+        ],
+        "showSymbolLogo"= true,
+        "colorTheme"= "light",
+        "isTransparent"= false,
+        "displayMode"= "adaptive",
+        "locale"= "es"
+         }
+        </script>
+        </div>
+        <!-- TradingView Widget END -->
     </header>
 
     <main>
@@ -205,9 +242,34 @@
                             </div>
                         </div>
                     </div>
-                    <div class="calculadora__chart">
+                    <!-- <div class="calculadora__chart">
                         <img src="../img/Trade.png" alt="chart" class="imgsize">
+                    </div> -->
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                        <div id="tradingview_53aad"></div>
+                        <div class="tradingview-widget-copyright"><a href="https://es.tradingview.com/symbols/EURUSD/?exchange=OANDA" rel="noopener" target="_blank"><span class="blue-text">EURUSD Gráfico</span></a> por TradingView</div>
+                        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                        <script type="text/javascript">
+                        new TradingView.widget(
+                        {
+                        "width": 750,
+                        "height": 400,
+                        "symbol": "OANDA:EURUSD",
+                        "interval": "240",
+                        "timezone": "America/Argentina/Buenos_Aires",
+                        "theme": "dark",
+                        "style": "1",
+                        "locale": "es",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "container_id": "tradingview_53aad"
+                        }
+                        );
+                        </script>
                     </div>
+                    <!-- TradingView Widget END -->
                 </div>
             </article>
             <article> <!-- Apartado donde estarán los precios de btc y eth en distintos paises-->
