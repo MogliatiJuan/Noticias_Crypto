@@ -222,7 +222,7 @@ function validacionVentaBTC(){  //valida que la venta sea menor que el supply
 function validacionVentaETH(){   //valida que la venta sea menor que el supply
     let ventaValida = document.querySelector("#cantidadVenta")
     if(ventaValida.value < BBDDJSON[1].supply){
-        finalizarVentaBTC();    //llama a la finalizacion de la venta
+        finalizarVentaETH();    //llama a la finalizacion de la venta
     } else {
         let capInstruccion = document.querySelector("#instruccion")
         capInstruccion.innerText = `No puedes vender mas que el supply existente. Que es de ${BBDDJSON[1].supply} ${ BBDDJSON[1].moneda}`
