@@ -173,6 +173,10 @@ main {
             color: #3f3f3f; }
             main .mainArt .mainArt__news article .links > li > a:hover {
               text-decoration: underline; }
+  main article {
+    margin: 10px 0; }
+    main article div button {
+      margin: 10px; }
   main .articulos {
     margin: 0 auto;
     display: flex;

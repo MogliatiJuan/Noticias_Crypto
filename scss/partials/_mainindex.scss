@@ -91,6 +91,15 @@ main {
         }
     }
 
+    article {
+        margin: 10px 0;
+        div {
+            button {
+                margin: 10px;
+            }
+        }
+    }
+
     .articulos{
         margin: 0 auto;
         display: flex;
