@@ -93,9 +93,50 @@ main {
 
     article {
         margin: 10px 0;
-        div {
+        div{
+            #operacionesExchange {
+                display: flex;
+                flex-direction: column;
+    
+                .monedasEnExchange{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                }
+
+                .botonComprar{
+                    align-self: center;
+                }
+            }
+        }
+    
+        #contenedorExchange {
             button {
                 margin: 10px;
+            }
+            aside {
+                div{
+                    a{
+                        text-decoration: none;
+                        color: #3f3f3f;
+                    }
+                }
+            }
+        }
+
+        #lastPrices {
+            display: flex;
+            flex-direction: column;
+
+            .ultimosPrecios{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+
+                p{
+                    font-size: 18px;
+                    font-weight: 100;
+                }
             }
         }
     }

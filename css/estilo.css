@@ -175,8 +175,30 @@ main {
               text-decoration: underline; }
   main article {
     margin: 10px 0; }
-    main article div button {
+    main article div #operacionesExchange {
+      display: flex;
+      flex-direction: column; }
+      main article div #operacionesExchange .monedasEnExchange {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around; }
+      main article div #operacionesExchange .botonComprar {
+        align-self: center; }
+    main article #contenedorExchange button {
       margin: 10px; }
+    main article #contenedorExchange aside div a {
+      text-decoration: none;
+      color: #3f3f3f; }
+    main article #lastPrices {
+      display: flex;
+      flex-direction: column; }
+      main article #lastPrices .ultimosPrecios {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around; }
+        main article #lastPrices .ultimosPrecios p {
+          font-size: 18px;
+          font-weight: 100; }
   main .articulos {
     margin: 0 auto;
     display: flex;

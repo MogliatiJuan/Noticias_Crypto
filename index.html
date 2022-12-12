@@ -54,7 +54,7 @@
                 </form>
               </div>
             </div>
-        </nav>
+        </nav>ls
         <!-- <div class="ticker"> Ticker que muestra precios horizontalmente de manera indefinida
                 <div class="scroll-parent">
                   <div class="scroll-element primary">
@@ -183,9 +183,13 @@
                 <input type="password" class="form-control" id="password" placeholder="Contraseña">
                 <input type="submit" class="form-control" id="login" value="Iniciar Sesion">
             </form>
-            <div id="operacionesExchange"> <!-- Se agregan los botones una vez se inicia sesion, a traves de inner.HTML -->
-                <!-- <button class="btn btn-primary btnCustom" id="btnComprar">Comprar</button>
-                <button class="btn btn-primary btnCustom" id="btnVender">Vender</button> -->
+            <div>
+                <div id="operacionesExchange"> <!-- Se agregan los botones una vez se inicia sesion, a traves de JS -->
+                </div>
+                <div id="contenedorExchange">
+                </div>
+                <div id="lastPrices">
+                </div>
             </div>
         </article>
         <article class="articulos">
@@ -305,5 +309,6 @@
     </footer>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

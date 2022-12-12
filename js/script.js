@@ -5,251 +5,495 @@ const Usuario = document.querySelector("#usuario")
 const Password = document.querySelector("#password")
 const inicioSesion = document.querySelector("#login") //capturo los nodos y los guardo en variables
 const operacionesExchange = document.querySelector("#operacionesExchange")
+const contenedorExchange = document.querySelector("#contenedorExchange")
+const lastPrices = document.querySelector("#lastPrices")
+
 
 let nombreUsuario;
 let clavePassword;
 
-class Criptomoneda {
-    constructor(precio, moneda, supply) {
-        this.precio = precio;
-        this.moneda = moneda;
-        this.supply = supply;
-    }
+const cryptocurrencies = [  // array de objetos
+    {id: "1", moneda: "btcusdt", precio: 16529,supply: 21000000},
+    {id: "2", moneda: "ethusdt", precio: 1197, supply: 120517315},
+    {id: "3", moneda: "xrpusdt", precio: 0.38, supply: 100000000000},
+    {id: "4", moneda: "manausd", precio: 0.39,supply: 2193328127},
+    {id: "5", moneda: "maticusd", precio: 0.89, supply: 10000000000 },
+    {id: "6", moneda: "sushiusd", precio: 1.14, supply: 250000000 },
+    {id: "7", moneda: "enjusd", precio: 0.30,supply: 1000000000 },
+    {id: "8", moneda: "hbarusd", precio: 0.048, supply: 50000000000 },
+    {id: "9", moneda: "alphausd", precio: 0.091, supply: 1000000000 },
+    {id: "10", moneda: "axsusd", precio: 8.09, supply: 270000000 },
+]
+
+
+const login = (res) => {    //Promesa para resolver si se inicia sesion
+    return new Promise ( (resolve, reject) => {
+        if (res) {
+            resolve('Sesion iniciada') 
+        } else {
+            reject('Sesion no iniciada')   
+        }
+    })
 }
 
-const cripto0 = new Criptomoneda(16529,"BTC",21000000);
-const cripto1 = new Criptomoneda(1197,"ETH",120517315);
+let usuarioEnLS = JSON.stringify(localStorage.getItem('usuario'))
+if (usuarioEnLS == "null") {
+    aVerificar();   // si no hay usuario registrado, agrega evento en boton de iniciar sesion para registrar usuario
+} else {
+    nombreUsuario = usuarioEnLS     // si hay usuario, lo guarda y cumple la promesa de que hay usuario
+    login(true)
+    .then(() => inicio())
+}
 
-const BBDD = [cripto0,cripto1]; // agrego en BBDD las criptos
-const BBDDLS = localStorage.setItem("BBDD", JSON.stringify(BBDD)) //guarde en LS en texto plano la BBDD
-const BBDDJSON = JSON.parse(localStorage.getItem("BBDD")) //obtengo la BBDD del LS y lo parseo p' traerlo como objetos literal
+
+function aVerificar(){
+    form.addEventListener("submit", verificacion) // agrego evento al boton
+}
 
 
-form.addEventListener("submit", inicio) // agrego evento al boton
-
-function inicio(e){
+function verificacion(e){
     e.preventDefault();
-    nombreUsuario = Usuario.value //asigno valor usuario
-    clavePassword = Password.value //asigno clave password
-    localStorage.setItem("usuario", nombreUsuario)  //guardo en LS el nombre de usuario -- aun no lo utilizo
-    sessionStorage.setItem("clavePassword", clavePassword)  //guardo en SS la clave
+    const datosUsuario = (Usuario.value != "" && Password.value != "") ? true : false // si estan ambos campos llenos, asigna true a datosUsuario
+    datosUsuario ? Swal.fire({  // datosUsuario si es true tira alerta exitosa sino error
+        title: 'Datos correctos',
+        text: 'Inicio de sesión exitoso',
+        icon: 'success',
+        confirmButtonText: 'Continuar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            login(true)
+            .then(() => inicio(e))
+            nombreUsuario = Usuario.value //asigno valor usuario
+            clavePassword = Password.value //asigno clave password
+            localStorage.setItem("usuario", nombreUsuario)  //guardo en LS el nombre de usuario
+            localStorage.setItem("clavePassword", clavePassword)  //guardo de momento en LS -- va en SS
+            // .catch(()=>console.log({error:e}))
+        }
+      }) : Swal.fire({
+        title: 'Error!',
+        text: 'Ingrese los datos correctamente',
+        icon: 'error',
+        confirmButtonText: 'Reingresar'
+    }).then((result) => {
+        if (result.isConfirmed){
+            login(false).then((res) => console.log(res))
+                .catch((e) => console.log({ error: e }))
+        }
+    })
+
+}
+
+function inicio(){
     form.reset();
-    titulo.innerText = `Bienvenido ${nombreUsuario} al Exchange de Crypto Club`
-    tituloBienvenida.innerHTML += "<p id='textoBienvenida'>Por favor, elija si desea comprar o vender</p>"
+    titulo.innerText =  `Bienvenido ${nombreUsuario} al Exchange de Crypto Club`
+    tituloBienvenida.innerHTML += "<p id='textoBienvenida'>Por favor, elija que moneda desea comprar</p>"
     Usuario.remove()
     Password.remove()
     inicioSesion.remove()
 
-    let comprar = document.createElement("button")  //creo boton para comprar
-    comprar.setAttribute("id", "comprar")
-    comprar.setAttribute("class", "btn btn-primary btnCustom")
-    operacionesExchange.append(comprar)
-    comprar.innerText = "Comprar"
+    cryptocurrencies.forEach((cripto) =>{  //recorro la cripto imprimiendo las monedas disponibles
 
-    let vender = document.createElement("button")   //creo boton para vender
-    vender.setAttribute("id", "vender")
-    vender.setAttribute("class", "btn btn-primary btnCustom")
-    operacionesExchange.append(vender)
-    vender.innerText = "Vender"
+        operacionesExchange.innerHTML += `
+        <div class="monedasEnExchange"><p>MONEDA: ${cripto.moneda}</p>
+        <p> PRECIO: ${cripto.precio}</p></div>
+        <button id= "${cripto.id}" class="btn btn-primary btnCustom botonComprar">Comprar</button>
+        `;
 
-    const btnComprar = document.querySelector("#comprar")  
-    btnComprar.addEventListener("click", opCompra)   //creo evento por si compra
+        let botonComprar = document.querySelectorAll(".botonComprar")   //capto todos los botones de comprar
+        botonComprar.forEach(boton => {
+                boton.addEventListener("click", agregarAlCarrito)   //le asigno a cada uno el evento de agregar al carrito
+            })
+        });
 
-    const btnVender = document.querySelector("#vender")
-    btnVender.addEventListener("click", opVenta)     //creo evento por si vende
-}
+    contenedorExchange.innerHTML = `
+    <div class="check">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal10" onclick="sevecarrito()">
+            <i class="fa-solid fa-cart-shopping"></i>Carrito <span id="numeroCarrito">0</span>
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal10" tabindex="-1" aria-labelledby="exampleModalLabel10" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel10">Carrito</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="cuerpoModal">
+                    <form>
+                        <div class="mb-3">
+                            <p id="textoCarrito">Elige los productos primero</p>
+                        </div>
+                        </form>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="vaciar()">Vaciar Carrito</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    `
 
-function opCompra(){
-    vender.remove() //elimino boton vender
-    comprar.remove()    //elimino boton comprar
-    let borrarTB = document.querySelector("#textoBienvenida")
-    borrarTB.remove();  //elimino texto bienvenida
+    lastPrices.innerHTML= `<h3>Ultimos precios del mercado</h3>`
+        cryptocurrencies.forEach(cripto => {
+            fetch(`https://www.bitstamp.net/api/v2/ticker/${cripto.moneda}/`)
+            .then(response => response.json())
+            .then(data => {
+                lastPrices.innerHTML +=  `<div class="ultimosPrecios">
+                <p>Par: ${cripto.moneda}</p>
+                <p>Ultimo precio: ${data.last}</p>
+                </div>
+            `
+            }) //si en ${cripto.moneda} coloco data.pair que es lo que deberia ir, no me lo toma
+    });
 
-    form.innerHTML = "<p id='instruccion'>Ingrese cual moneda desea comprar. Estas son las monedas disponibles:</p>"
-    let lista = document.createElement("ul")
-    lista.setAttribute("id", "ul")
-    BBDDJSON.forEach((num) =>{  //recorro la BBDD imprimiendo las monedas disponibles
-        lista.innerHTML += `<li>${num.moneda}</li>` //las guardo en una lista
-    }
-    );
 
-    form.append(lista)
+    let numeroCarrito = document.querySelector("#numeroCarrito")
 
-    let bitcoin = document.createElement("button")
-    bitcoin.setAttribute("id", "btc")
-    bitcoin.setAttribute("class", "btn btn-primary btnCustom")
-    bitcoin.innerText = "BTC"
-    operacionesExchange.append(bitcoin) //agrego boton de BTC al div operacionesExchange
-    let ethereum = document.createElement("button")
-    ethereum.setAttribute("id", "eth")
-    ethereum.setAttribute("class", "btn btn-primary btnCustom")
-    ethereum.innerText = "ETH"
-    operacionesExchange.append(ethereum)  //agrego boton de ETH al div operacionesExchange
 
-    let btnBTC = document.querySelector("#btc")
-    btnBTC.addEventListener("click", compraBTC) // si quiere comprar btc ejecuto una funcion
-    let btnETH = document.querySelector("#eth")
-    btnETH.addEventListener("click", compraETH)  // si quiere comprar eth ejecuto una funcion
-}
+    let monedasEnCarrito;
 
-function compraBTC(){   //solo dejo un input con la cantidad a comprar y el input submit para que lo envie
-    let cambiarInst = document.querySelector("#instruccion")
-    cambiarInst.innerText = "Muy bien! Ahora solo debe ingresar la cantidad a comprar de BTC"
-    let borrarUl = document.querySelector("#ul")
-    borrarUl.remove();
-    operacionesExchange.innerHTML = '<input type="text" class="form-control" id="cantidadCompra" placeholder="Ingrese cantidad">'
-    operacionesExchange.innerHTML += '<input type="submit" class="form-control" id="enviarCompra" value="Comprar"></input>'
-    let enviarCompra = document.querySelector("#enviarCompra")    //capturo el input de "comprar"
-    enviarCompra.addEventListener("click", validacionCompraBTC) //le asigno un evento que primero valida si es correcto
-}
+    const monedasEnCarritoLS = JSON.parse(localStorage.getItem("criptosCarrito"))
+    
 
-function compraETH(){   //solo dejo un input con la cantidad a comprar y el input submit para que lo envie
-    let cambiarInst = document.querySelector("#instruccion")
-    cambiarInst.innerText = "Muy bien! Ahora solo debe ingresar la cantidad a comprar de ETH"
-    let borrarUl = document.querySelector("#ul")
-    borrarUl.remove();
-    operacionesExchange.innerHTML = '<input type="text" class="form-control" id="cantidadCompra" placeholder="Ingrese cantidad">'
-    operacionesExchange.innerHTML += '<input type="submit" class="form-control" id="enviarCompra" value="Comprar"></input>'
-    const enviarCompra = document.querySelector("#enviarCompra")    //capturo el input de "comprar"
-    enviarCompra.addEventListener("click", validacionCompraETH) //le asigno un evento de validacion
-}
-
-function validacionCompraBTC(){ //valida que la cantidad a comprar sea menor que el supply
-    let compraValida = document.querySelector("#cantidadCompra")
-    if(compraValida.value < BBDDJSON[0].supply){
-       finalizarCompraBTC();    // si es menor ejecuta la finalizacion
+    if(monedasEnCarritoLS && monedasEnCarritoLS.length > 0){
+        monedasEnCarrito = monedasEnCarritoLS   // si hay algo en el LS que lo asigne al nuevo array
+        actualizarNumeroCarrito()
     } else {
-        let capInstruccion = document.querySelector("#instruccion")
-        capInstruccion.innerText = `No puedes comprar mas que el supply existente. Que es de ${BBDDJSON[0].supply} ${ BBDDJSON[0].moneda}`
+        monedasEnCarrito = [];
+    }
+
+    function agregarAlCarrito(e){
+        
+        const idBoton = e.currentTarget.id;
+        const monedaAgregada = cryptocurrencies.find((cripto) => cripto.id === idBoton);
+        // console.log(monedaAgregada)
+        
+        if(monedasEnCarrito.some(moneda => moneda.id === idBoton)){ // si encuentra en el carrito ya una moneda existente
+            const index = monedasEnCarrito.findIndex(moneda => moneda.id === idBoton)
+            monedasEnCarrito[index].cantidad++;
+        } else {
+            monedaAgregada.cantidad = 1;    //asigno a las monedas del array una propiedad nueva que es cantidad
+            monedasEnCarrito.push(monedaAgregada)
+        }
+        actualizarNumeroCarrito()
+        // console.log(monedasEnCarrito)
+        localStorage.setItem("criptosCarrito", JSON.stringify(monedasEnCarrito)) // agrego array de monedas del carrito al LS
+    }
+
+    function actualizarNumeroCarrito(){
+        let numeroCarritoActualizado = monedasEnCarrito.reduce((acc, moneda) => acc + moneda.cantidad, 0);
+        numeroCarrito.innerText = numeroCarritoActualizado; 
     }
 }
 
-function validacionCompraETH(){ //valida que la cantidad a comprar sea menor que el supply
-    let compraValida = document.querySelector("#cantidadCompra")
-    if(compraValida.value < BBDDJSON[1].supply){
-       finalizarCompraETH();    // si es menor ejecuta la finalizacion
-    } else {
-        let capInstruccion = document.querySelector("#instruccion")
-        capInstruccion.innerText = `No puedes comprar mas que el supply existente. Que es de ${ BBDDJSON[1].supply} ${BBDDJSON[1].moneda}`
+function sevecarrito(){
+    const criptosEnCarritoLS = JSON.parse(localStorage.getItem("criptosCarrito"))
+    let criptosEnCarrito;
+    if(criptosEnCarritoLS){
+        criptosEnCarrito = criptosEnCarritoLS;
+        cuerpoModal.innerHTML = `<p>Estos son los productos agregados al carrito</p>`
+        criptosEnCarritoLS.forEach(cripto => {
+            cuerpoModal.innerHTML += `
+            <h3>Moneda: ${cripto.moneda}</h3>
+            <p>Cantidad: ${cripto.cantidad}</p>
+            <p>Precio: $ ${cripto.precio}</p>
+            <p>Subtotal: ${cripto.precio * cripto.cantidad} USD</p>
+            `
+            
+        })
+        const total = criptosEnCarritoLS.reduce((acc, moneda) => acc + (moneda.precio * moneda.cantidad), 0)
+        cuerpoModal.innerHTML += `<h3>Total: ${total} USD</h3>`}else{
+        criptosEnCarrito = [];
+    }
+    if(criptosEnCarrito == ""){
+        cuerpoModal.innerHTML=  `<p>No hay productos</p>`
+        numeroCarrito.innerText= "0"
     }
 }
 
-function finalizarCompraBTC(){  // finaliza la compra
-    let cantCompra = document.querySelector("#cantidadCompra")
-    let capInstruccion = document.querySelector("#instruccion")
-    capInstruccion.innerText = `Felicitaciones! Has comprado ${cantCompra.value} ${BBDDJSON[0].moneda}`
-    capInstruccion.innerHTML += `<p>Muchas gracias ${nombreUsuario} por utilizar nuestro exchange</p>`
-    let capInput = document.querySelector("#cantidadCompra")
-    capInput.remove()
-    enviarCompra.remove()
+
+function vaciar(){
+    const monedasEnCarritoLS = JSON.parse(localStorage.getItem("criptosCarrito"))
+    monedasEnCarritoLS.length = 0
+    localStorage.setItem("criptosCarrito", JSON.stringify(monedasEnCarritoLS))
+    numeroCarrito.innerText= "0"
 }
 
-function finalizarCompraETH(){  // finaliza la compra
-    let cantCompra = document.querySelector("#cantidadCompra")
-    let capInstruccion = document.querySelector("#instruccion")
-    capInstruccion.innerText = `Felicitaciones! Has comprado ${cantCompra.value} ${BBDDJSON[1].moneda}`
-    capInstruccion.innerHTML += `<p>Muchas gracias ${nombreUsuario} por utilizar nuestro exchange</p>`
-    let capInput = document.querySelector("#cantidadCompra")
-    capInput.remove()
-    enviarCompra.remove()
-}
 
-function opVenta(){     //misma funcionalidad que opCompra()
-    vender.remove()
-    comprar.remove()
-    let borrarTB = document.querySelector("#textoBienvenida")
-    borrarTB.remove();
 
-    form.innerHTML = "<p id='instruccion'>Ingrese cual moneda desea vender. Estas son las monedas disponibles:</p>"
-    let lista = document.createElement("ul")
-    lista.setAttribute("id", "ul")
-    BBDDJSON.forEach((num) =>{
-        console.log(num.moneda)
-        lista.innerHTML += `<li>${num.moneda}</li>`
-    }
-    );
-    form.append(lista)
 
-    let bitcoin = document.createElement("button")
-    bitcoin.setAttribute("id", "btc")
-    bitcoin.setAttribute("class", "btn btn-primary btnCustom")
-    bitcoin.innerText = "BTC"
-    operacionesExchange.append(bitcoin)
-    let ethereum = document.createElement("button")
-    ethereum.setAttribute("id", "eth")
-    ethereum.setAttribute("class", "btn btn-primary btnCustom")
-    ethereum.innerText = "ETH"
-    operacionesExchange.append(ethereum)
 
-    let btnBTC = document.querySelector("#btc")
-    btnBTC.addEventListener("click", ventaBTC)
-    let btnETH = document.querySelector("#eth")
-    btnETH.addEventListener("click", ventaETH)
-}
 
-function ventaBTC(){    //same function compraBTC() but sell
-    let cambiarInst = document.querySelector("#instruccion")
-    cambiarInst.innerText = "Muy bien! Ahora solo debe ingresar la cantidad a vender de BTC"
-    let borrarUl = document.querySelector("#ul")
-    borrarUl.remove();
-    operacionesExchange.innerHTML = '<input type="text" class="form-control" id="cantidadVenta" placeholder="Ingrese cantidad">'
-    operacionesExchange.innerHTML += '<input type="submit" class="form-control" id="enviarVenta" value="Vender"></input>'
-    const enviarVenta = document.querySelector("#enviarVenta")    //capturo el input de "venta"
-    enviarVenta.addEventListener("click", validacionVentaBTC) //le asigno un evento validacion
-}
 
-function ventaETH(){    //same function compraETH() but sell
-    let cambiarInst = document.querySelector("#instruccion")
-    cambiarInst.innerText = "Muy bien! Ahora solo debe ingresar la cantidad a vender de ETH"
-    let borrarUl = document.querySelector("#ul")
-    borrarUl.remove();
-    operacionesExchange.innerHTML = '<input type="text" class="form-control" id="cantidadVenta" placeholder="Ingrese cantidad">'
-    operacionesExchange.innerHTML += '<input type="submit" class="form-control" id="enviarVenta" value="Vender"></input>'
-    const enviarVenta = document.querySelector("#enviarVenta")    //capturo el input de "venta"
-    enviarVenta.addEventListener("click", validacionVentaETH) //le asigno un evento validacion
-}
 
-function validacionVentaBTC(){  //valida que la venta sea menor que el supply
-    let ventaValida = document.querySelector("#cantidadVenta")
-    if(ventaValida.value < BBDDJSON[0].supply){
-        finalizarVentaBTC();    //llama a la finalizacion de la venta
-    } else {
-        let capInstruccion = document.querySelector("#instruccion")
-        capInstruccion.innerText = `No puedes vender mas que el supply existente. Que es de ${BBDDJSON[0].supply} ${ BBDDJSON[0].moneda}`
-    }
-}
 
-function validacionVentaETH(){   //valida que la venta sea menor que el supply
-    let ventaValida = document.querySelector("#cantidadVenta")
-    if(ventaValida.value < BBDDJSON[1].supply){
-        finalizarVentaETH();    //llama a la finalizacion de la venta
-    } else {
-        let capInstruccion = document.querySelector("#instruccion")
-        capInstruccion.innerText = `No puedes vender mas que el supply existente. Que es de ${BBDDJSON[1].supply} ${ BBDDJSON[1].moneda}`
-    }
-}
+// **********CODIGO VIEJO - AÑADIENDOLO PROXIMAMENTE ****************
 
-function finalizarVentaBTC(){   //finaliza la venta
-    let cantVenta = document.querySelector("#cantidadVenta")
-    let capInstruccion = document.querySelector("#instruccion")
-    capInstruccion.innerText = `Felicitaciones! Has vendido ${cantVenta.value} ${BBDDJSON[0].moneda}`
-    capInstruccion.innerHTML += `<p>Muchas gracias ${nombreUsuario} por utilizar nuestro exchange</p>`
-    let capInput = document.querySelector("#cantidadVenta")
-    capInput.remove()
-    enviarVenta.remove()
-}
+// class Criptomoneda {
+//     constructor(precio, moneda, supply) {
+//         this.precio = precio;
+//         this.moneda = moneda;
+//         this.supply = supply;
+//     }
+// }
 
-function finalizarVentaETH(){   //finaliza la venta
-    let cantVenta = document.querySelector("#cantidadVenta")
-    let capInstruccion = document.querySelector("#instruccion")
-    capInstruccion.innerText = `Felicitaciones! Has vendido ${cantVenta.value} ${BBDDJSON[1].moneda}`
-    capInstruccion.innerHTML += `<p>Muchas gracias ${nombreUsuario} por utilizar nuestro exchange</p>`
-    let capInput = document.querySelector("#cantidadVenta")
-    capInput.remove()
-    enviarVenta.remove()
-}
+// const cripto0 = new Criptomoneda(16529,"BTC",21000000);
+// const cripto1 = new Criptomoneda(1197,"ETH",120517315);
 
-// **********CODIGO ANTERIOR - FALTA AGREGAR AL CODIGO NUEVO ****************
+// const BBDD = [cripto0,cripto1]; // agrego en BBDD las criptos
+// const BBDDLS = localStorage.setItem("BBDD", JSON.stringify(BBDD)) //guarde en LS en texto plano la BBDD
+// const BBDDJSON = JSON.parse(localStorage.getItem("BBDD")) //obtengo la BBDD del LS y lo parseo p' traerlo como objetos literal
+
+
+// if(criptosEnCarritoLS){
+//     // criptosEnCarritoLS.forEach(cripto => {
+//     //     let textoCarrito = document.querySelector("#textoCarrito")
+//     //     textoCarrito.innerText = "Tienes las siguientes monedas en tu carrito"
+//     //     div.innerHTML += `
+//     //     <h3>Moneda: ${cripto.moneda}</h3>
+//     //     <p>Cantidad: ${cripto.cantidad}</p>
+//     //     <p>Precio: ${cripto.precio}</p>
+//     //     <p>Subtotal: ${cripto.precio * cripto.cantidad}</p>
+//     //     <button type="button" class="btn btn-secondary" id="${cripto.id}"><i class="fa-solid fa-trash"></i>Eliminar</button>
+//     //     ` 
+//     //     div.append(div)
+//     // })
+//     cuerpoCarritoModal.innerText = `Se agregan productos aqui`
+// }else{
+//     cuerpoCarritoModal.innerText = `Elige productos`
+// }
+
+        // operacionesExchange.innerHTML += <li>${num.moneda} ${num.precio} </li> //las guardo en una lista
+        // let comprar = document.createElement("button")  //creo boton para comprar
+        // comprar.setAttribute("id", num.id)
+        // comprar.setAttribute("class", "btn btn-primary btnCustom")
+        // operacionesExchange.append(comprar)
+        // comprar.innerText = "Comprar"
+        
+        
+        // let vender = document.createElement("button")   //creo boton para vender
+        // vender.setAttribute("id", "vender")
+        // vender.setAttribute("class", "btn btn-primary btnCustom")
+        // operacionesExchange.append(vender)
+        // vender.innerText = "Vender"
+
+    // let comprar = document.createElement("button")  //creo boton para comprar
+    // comprar.setAttribute("id", "comprar")
+    // comprar.setAttribute("class", "btn btn-primary btnCustom")
+    // operacionesExchange.append(comprar)
+    // comprar.innerText = "Comprar"
+
+    // let vender = document.createElement("button")   //creo boton para vender
+    // vender.setAttribute("id", "vender")
+    // vender.setAttribute("class", "btn btn-primary btnCustom")
+    // operacionesExchange.append(vender)
+    // vender.innerText = "Vender"
+
+    // const btnComprar = document.querySelector("#comprar")  
+    // btnComprar.addEventListener("click", comprarmoneda)   //creo evento por si compra
+
+    // const btnVender = document.querySelector("#vender")
+    // btnVender.addEventListener("click", vendermoneda)     //creo evento por si vende
+
+
+// function comprarmoneda(){
+//     console.log("esta comprando")
+// }
+
+
+// function opCompra(){
+//     // vender.remove() //elimino boton vender
+//     // comprar.remove()    //elimino boton comprar
+//     let borrarTB = document.querySelector("#textoBienvenida")
+//     borrarTB.remove();  //elimino texto bienvenida
+
+//     form.innerHTML = "<p id='instruccion'>Ingrese cual moneda desea comprar. Estas son las monedas disponibles:</p>"
+//     let lista = document.createElement("ul")
+//     lista.setAttribute("id", "ul")
+//     BBDDJSON.forEach((num) =>{  //recorro la BBDD imprimiendo las monedas disponibles
+//         lista.innerHTML += `<li>${num.moneda}</li>` //las guardo en una lista
+//     }
+//     );
+
+//     form.append(lista)
+
+//     let bitcoin = document.createElement("button")
+//     bitcoin.setAttribute("id", "btc")
+//     bitcoin.setAttribute("class", "btn btn-primary btnCustom")
+//     bitcoin.innerText = "BTC"
+//     operacionesExchange.append(bitcoin) //agrego boton de BTC al div operacionesExchange
+//     let ethereum = document.createElement("button")
+//     ethereum.setAttribute("id", "eth")
+//     ethereum.setAttribute("class", "btn btn-primary btnCustom")
+//     ethereum.innerText = "ETH"
+//     operacionesExchange.append(ethereum)  //agrego boton de ETH al div operacionesExchange
+
+//     let btnBTC = document.querySelector("#btc")
+//     btnBTC.addEventListener("click", compraBTC) // si quiere comprar btc ejecuto una funcion
+//     let btnETH = document.querySelector("#eth")
+//     btnETH.addEventListener("click", compraETH)  // si quiere comprar eth ejecuto una funcion
+// }
+
+// function compraBTC(){   //solo dejo un input con la cantidad a comprar y el input submit para que lo envie
+//     let cambiarInst = document.querySelector("#instruccion")
+//     cambiarInst.innerText = "Muy bien! Ahora solo debe ingresar la cantidad a comprar de BTC"
+//     let borrarUl = document.querySelector("#ul")
+//     borrarUl.remove();
+//     operacionesExchange.innerHTML = '<input type="text" class="form-control" id="cantidadCompra" placeholder="Ingrese cantidad">'
+//     operacionesExchange.innerHTML += '<input type="submit" class="form-control" id="enviarCompra" value="Comprar"></input>'
+//     let enviarCompra = document.querySelector("#enviarCompra")    //capturo el input de "comprar"
+//     enviarCompra.addEventListener("click", validacionCompraBTC) //le asigno un evento que primero valida si es correcto
+// }
+
+// function compraETH(){   //solo dejo un input con la cantidad a comprar y el input submit para que lo envie
+//     let cambiarInst = document.querySelector("#instruccion")
+//     cambiarInst.innerText = "Muy bien! Ahora solo debe ingresar la cantidad a comprar de ETH"
+//     let borrarUl = document.querySelector("#ul")
+//     borrarUl.remove();
+//     operacionesExchange.innerHTML = '<input type="text" class="form-control" id="cantidadCompra" placeholder="Ingrese cantidad">'
+//     operacionesExchange.innerHTML += '<input type="submit" class="form-control" id="enviarCompra" value="Comprar"></input>'
+//     const enviarCompra = document.querySelector("#enviarCompra")    //capturo el input de "comprar"
+//     enviarCompra.addEventListener("click", validacionCompraETH) //le asigno un evento de validacion
+// }
+
+// function validacionCompraBTC(){ //valida que la cantidad a comprar sea menor que el supply
+//     let compraValida = document.querySelector("#cantidadCompra")
+//     if(compraValida.value < BBDDJSON[0].supply){
+//        finalizarCompraBTC();    // si es menor ejecuta la finalizacion
+//     } else {
+//         let capInstruccion = document.querySelector("#instruccion")
+//         capInstruccion.innerText = `No puedes comprar mas que el supply existente. Que es de ${BBDDJSON[0].supply} ${ BBDDJSON[0].moneda}`
+//     }
+// }
+
+// function validacionCompraETH(){ //valida que la cantidad a comprar sea menor que el supply
+//     let compraValida = document.querySelector("#cantidadCompra")
+//     if(compraValida.value < BBDDJSON[1].supply){
+//        finalizarCompraETH();    // si es menor ejecuta la finalizacion
+//     } else {
+//         let capInstruccion = document.querySelector("#instruccion")
+//         capInstruccion.innerText = `No puedes comprar mas que el supply existente. Que es de ${ BBDDJSON[1].supply} ${BBDDJSON[1].moneda}`
+//     }
+// }
+
+// function finalizarCompraBTC(){  // finaliza la compra
+//     let cantCompra = document.querySelector("#cantidadCompra")
+//     let capInstruccion = document.querySelector("#instruccion")
+//     capInstruccion.innerText = `Felicitaciones! Has comprado ${cantCompra.value} ${BBDDJSON[0].moneda}`
+//     capInstruccion.innerHTML += `<p>Muchas gracias ${nombreUsuario} por utilizar nuestro exchange</p>`
+//     let capInput = document.querySelector("#cantidadCompra")
+//     capInput.remove()
+//     enviarCompra.remove()
+// }
+
+// function finalizarCompraETH(){  // finaliza la compra
+//     let cantCompra = document.querySelector("#cantidadCompra")
+//     let capInstruccion = document.querySelector("#instruccion")
+//     capInstruccion.innerText = `Felicitaciones! Has comprado ${cantCompra.value} ${BBDDJSON[1].moneda}`
+//     capInstruccion.innerHTML += `<p>Muchas gracias ${nombreUsuario} por utilizar nuestro exchange</p>`
+//     let capInput = document.querySelector("#cantidadCompra")
+//     capInput.remove()
+//     enviarCompra.remove()
+// }
+
+// function opVenta(){     //misma funcionalidad que opCompra()
+//     vender.remove()
+//     comprar.remove()
+//     let borrarTB = document.querySelector("#textoBienvenida")
+//     borrarTB.remove();
+
+//     form.innerHTML = "<p id='instruccion'>Ingrese cual moneda desea vender. Estas son las monedas disponibles:</p>"
+//     let lista = document.createElement("ul")
+//     lista.setAttribute("id", "ul")
+//     BBDDJSON.forEach((num) =>{
+//         console.log(num.moneda)
+//         lista.innerHTML += `<li>${num.moneda}</li>`
+//     }
+//     );
+//     form.append(lista)
+
+//     let bitcoin = document.createElement("button")
+//     bitcoin.setAttribute("id", "btc")
+//     bitcoin.setAttribute("class", "btn btn-primary btnCustom")
+//     bitcoin.innerText = "BTC"
+//     operacionesExchange.append(bitcoin)
+//     let ethereum = document.createElement("button")
+//     ethereum.setAttribute("id", "eth")
+//     ethereum.setAttribute("class", "btn btn-primary btnCustom")
+//     ethereum.innerText = "ETH"
+//     operacionesExchange.append(ethereum)
+
+//     let btnBTC = document.querySelector("#btc")
+//     btnBTC.addEventListener("click", ventaBTC)
+//     let btnETH = document.querySelector("#eth")
+//     btnETH.addEventListener("click", ventaETH)
+// }
+
+// function ventaBTC(){    //same function compraBTC() but sell
+//     let cambiarInst = document.querySelector("#instruccion")
+//     cambiarInst.innerText = "Muy bien! Ahora solo debe ingresar la cantidad a vender de BTC"
+//     let borrarUl = document.querySelector("#ul")
+//     borrarUl.remove();
+//     operacionesExchange.innerHTML = '<input type="text" class="form-control" id="cantidadVenta" placeholder="Ingrese cantidad">'
+//     operacionesExchange.innerHTML += '<input type="submit" class="form-control" id="enviarVenta" value="Vender"></input>'
+//     const enviarVenta = document.querySelector("#enviarVenta")    //capturo el input de "venta"
+//     enviarVenta.addEventListener("click", validacionVentaBTC) //le asigno un evento validacion
+// }
+
+// function ventaETH(){    //same function compraETH() but sell
+//     let cambiarInst = document.querySelector("#instruccion")
+//     cambiarInst.innerText = "Muy bien! Ahora solo debe ingresar la cantidad a vender de ETH"
+//     let borrarUl = document.querySelector("#ul")
+//     borrarUl.remove();
+//     operacionesExchange.innerHTML = '<input type="text" class="form-control" id="cantidadVenta" placeholder="Ingrese cantidad">'
+//     operacionesExchange.innerHTML += '<input type="submit" class="form-control" id="enviarVenta" value="Vender"></input>'
+//     const enviarVenta = document.querySelector("#enviarVenta")    //capturo el input de "venta"
+//     enviarVenta.addEventListener("click", validacionVentaETH) //le asigno un evento validacion
+// }
+
+// function validacionVentaBTC(){  //valida que la venta sea menor que el supply
+//     let ventaValida = document.querySelector("#cantidadVenta")
+//     if(ventaValida.value < BBDDJSON[0].supply){
+//         finalizarVentaBTC();    //llama a la finalizacion de la venta
+//     } else {
+//         let capInstruccion = document.querySelector("#instruccion")
+//         capInstruccion.innerText = `No puedes vender mas que el supply existente. Que es de ${BBDDJSON[0].supply} ${ BBDDJSON[0].moneda}`
+//     }
+// }
+
+// function validacionVentaETH(){   //valida que la venta sea menor que el supply
+//     let ventaValida = document.querySelector("#cantidadVenta")
+//     if(ventaValida.value < BBDDJSON[1].supply){
+//         finalizarVentaETH();    //llama a la finalizacion de la venta
+//     } else {
+//         let capInstruccion = document.querySelector("#instruccion")
+//         capInstruccion.innerText = `No puedes vender mas que el supply existente. Que es de ${BBDDJSON[1].supply} ${ BBDDJSON[1].moneda}`
+//     }
+// }
+
+// function finalizarVentaBTC(){   //finaliza la venta
+//     let cantVenta = document.querySelector("#cantidadVenta")
+//     let capInstruccion = document.querySelector("#instruccion")
+//     capInstruccion.innerText = `Felicitaciones! Has vendido ${cantVenta.value} ${BBDDJSON[0].moneda}`
+//     capInstruccion.innerHTML += `<p>Muchas gracias ${nombreUsuario} por utilizar nuestro exchange</p>`
+//     let capInput = document.querySelector("#cantidadVenta")
+//     capInput.remove()
+//     enviarVenta.remove()
+// }
+
+// function finalizarVentaETH(){   //finaliza la venta
+//     let cantVenta = document.querySelector("#cantidadVenta")
+//     let capInstruccion = document.querySelector("#instruccion")
+//     capInstruccion.innerText = `Felicitaciones! Has vendido ${cantVenta.value} ${BBDDJSON[1].moneda}`
+//     capInstruccion.innerHTML += `<p>Muchas gracias ${nombreUsuario} por utilizar nuestro exchange</p>`
+//     let capInput = document.querySelector("#cantidadVenta")
+//     capInput.remove()
+//     enviarVenta.remove()
+// }
 
 // let usuario = document.getElementById("usuario")
 // let password = document.getElementById("password")
