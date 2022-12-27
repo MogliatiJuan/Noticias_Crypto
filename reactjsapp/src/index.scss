@@ -1,0 +1,98 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  #root {
+    display: flex;
+    flex-direction: column;
+  
+    header {
+  
+      .navbar {
+    
+        .material-icons{
+          margin-right: 15px;
+        }
+    
+        #numerito {
+          position: absolute;
+          top: 8px;
+          right: 10px;
+          font-size: 12px;
+          background-color: #c00;
+          border-radius: 50%;
+          width: 18px;
+          height: 18px;
+          text-align: center;
+          color: #fff;
+        }
+      }
+    }
+    
+    main {
+      flex-grow: 1;
+    
+      .greeting{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        p {
+          margin: 10px;
+        }
+      }
+    }
+  
+    footer {
+  
+      .navbar {
+    
+        .container{
+    
+          .navFooter{
+            flex-direction: column;
+          
+            .navbar-nav{
+              flex-direction: column;
+              align-items: center;
+          
+              > a {
+                font-size: 15px;
+                font-weight: bold;
+              }
+          
+              > p {
+                padding: 0;
+                margin: 0;
+                font-size: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.navbar {
+  background-color: #b9b9b9a3  !important;
+}
+.navbar-expand-lg .navbar-collapse {
+  flex-direction: row-reverse;
+}
+
+.navbar-expand-lg .navbar-nav{
+  margin-right: 0 !important;
+}
+
+
